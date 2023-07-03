@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import jobs from "../../assets/jobs.png";
-import magnifier from "../../assets/lupa.png";
-import { StyledDiv, StyledImg } from './style';
+import { Link } from "react-router-dom"
+import jobs from "../../assets/jobs.png"
+import magnifier from "../../assets/lupa.png"
+import { StyledDiv, StyledImg } from './style'
 
 export const Header = () => {
     return (

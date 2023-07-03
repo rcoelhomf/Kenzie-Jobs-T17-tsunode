@@ -1,20 +1,31 @@
-import { createContext, useState } from "react";
-import { api } from "../../services/api";
-import { ICompanyContext, ICompanyContextProps, ICompanyRegister, ICompanyLogin } from "./@types";
-import { LoginForm } from "../../Schema/LoginSchema";
-import { RegisterForm } from "../../Schema/RegisterSchema";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { createContext, useState } from "react"
+import { api } from "../../services/api"
+import { ICompanyContext, ICompanyContextProps, ICompanyRegister, ICompanyLogin, IapplySubmit } from "./@types"
+import { LoginForm } from "../../Schema/LoginSchema"
+import { RegisterForm } from "../../Schema/RegisterSchema"
+import { useNavigate } from "react-router-dom"
+import { toast } from "react-toastify"
 
 
 export const CompanyContext = createContext<ICompanyContext>(
     {} as ICompanyContext
-  );
+)
 
 export const CompanyProvider = ({children}: ICompanyContextProps) => {
 
     const [company, setCompany] = useState<ICompanyRegister | null>(null)
+    const [isOpen, setIsOpen] = useState<number | null>(null)
     const navigate = useNavigate()
+
+    const applyJob = async (formData: IapplySubmit) => {
+
+        try {
+            await api.post<IapplySubmit>("/applications", formData)
+            toast.success("Candidatura realizada")
+        } catch (error) {
+            toast.error("Algo deu errado")
+        }
+    }
 
     const registerCompany = async (formData: RegisterForm) => {
 
@@ -51,7 +62,7 @@ export const CompanyProvider = ({children}: ICompanyContextProps) => {
 
     return (
 
-        <CompanyContext.Provider value={{company, setCompany, registerCompany, loginCompany, logoutCompany}}>
+        <CompanyContext.Provider value={{company, setCompany, isOpen, setIsOpen, applyJob, registerCompany, loginCompany, logoutCompany}}>
             {children}
         </CompanyContext.Provider>
     )
