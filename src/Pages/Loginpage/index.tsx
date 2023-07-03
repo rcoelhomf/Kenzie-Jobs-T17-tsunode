@@ -1,7 +1,7 @@
 import { SubmitHandler, useForm } from "react-hook-form"
 import { Input } from "../../components/Input";
 import { useContext } from "react";
-import { CompanyContext } from "../../providers/CompanyContext.tsx";
+import { CompanyContext } from "../../providers/CompanyContext/index.tsx";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginForm, loginFormSchema } from "../../Schema/LoginSchema.ts";
 
