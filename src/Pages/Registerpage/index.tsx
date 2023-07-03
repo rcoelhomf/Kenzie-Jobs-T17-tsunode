@@ -5,6 +5,8 @@ import { Header } from "../../components/Header/index";
 import { registerFormSchema } from "../../Schema/RegisterSchema";
 import { CompanyContext } from "../../providers/CompanyContext/index";
 import { ICompanyRegister } from "../../providers/CompanyContext/@types";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface FormData extends ICompanyRegister {
   password: string;
@@ -54,6 +56,7 @@ export const RegisterPage: React.FC = () => {
       </section>
 
       <section></section>
+      <ToastContainer />
     </>
   );
 };
