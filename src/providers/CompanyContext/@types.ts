@@ -1,3 +1,6 @@
+import { LoginForm } from "../../Schema/LoginSchema";
+import { RegisterForm } from "../../Schema/RegisterSchema";
+
 export interface ICompanyContextProps {   
     children: React.ReactNode;
 }
@@ -6,7 +9,7 @@ export interface ICompanyContextProps {
 export interface ICompanyRegister {
     email: string;
     name: string;
-    id: number;
+    id?: number;
 }
 
 // Resposta da API em relação ao login
@@ -17,7 +20,7 @@ export interface ICompanyLogin {
 
 export interface ICompanyContext {
     company: ICompanyRegister | null
-    registerCompany: (formData: any) => Promise<void>
-    loginCompany: (formData: any) => Promise<void>
+    registerCompany: (formData: RegisterForm) => Promise<void>
+    loginCompany: (formData: LoginForm) => Promise<void>
     logoutCompany: () => void
 }
