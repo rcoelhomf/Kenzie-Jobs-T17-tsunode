@@ -6,6 +6,7 @@ import { RegisterForm } from "../../Schema/RegisterSchema"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 
+
 export const CompanyContext = createContext<ICompanyContext>(
     {} as ICompanyContext
 )
@@ -31,8 +32,10 @@ export const CompanyProvider = ({children}: ICompanyContextProps) => {
         try {
             const { data } = await api.post<ICompanyRegister>("/users", formData)
             console.log(data)
+            toast.success("Empresa registrada com sucesso!");
         } catch (error) {
             console.log(error)
+            toast.error("Erro ao registrar empresa. Por favor, tente novamente.");
         }
     }
 
