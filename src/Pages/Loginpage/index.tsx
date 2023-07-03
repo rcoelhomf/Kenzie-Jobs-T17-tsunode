@@ -7,7 +7,7 @@ import { LoginForm, loginFormSchema } from "../../Schema/LoginSchema.ts";
 
 
 export const LoginPage = () => {
-    const { register, handleSubmit, formState: { errors} } = useForm<LoginForm>({
+    const { register, handleSubmit, formState: { errors } } = useForm<LoginForm>({
         resolver: zodResolver(loginFormSchema)
     })
 
