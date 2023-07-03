@@ -18,15 +18,6 @@ export const registerFormSchema = z.object({
     
     name: z.string()
     .nonempty("Este campo é obrigatório e precisa conter pelo menos 3 caracteres"),
-    
-    bio: z.string()
-    .nonempty("Este campo é obrigatório"),
-
-    contact: z.string()
-    .nonempty("Este campo é obrigatorio, insira qualquer meio de contao"),
-    
-    course_module: z.string()
-    .nonempty("Selecione pelo menos uma das opções"),
 
 }).refine(({password, confirmPassword}) => confirmPassword === password, {
     message: "A confirmação de senha precisa corresponder",
