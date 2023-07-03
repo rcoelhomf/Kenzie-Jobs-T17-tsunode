@@ -2,7 +2,9 @@ import { createContext, useState } from "react";
 import { api } from "../../services/api";
 import { ICompanyContext, ICompanyContextProps, ICompanyRegister, ICompanyLogin } from "./@types";
 
-export const CompanyContext = createContext({} as ICompanyContext);
+export const CompanyContext = createContext<ICompanyContext>(
+    {} as ICompanyContext
+  );
 
 export const CompanyProvider = ({children}: ICompanyContextProps) => {
 
@@ -40,7 +42,7 @@ export const CompanyProvider = ({children}: ICompanyContextProps) => {
 
     return (
 
-        <CompanyContext.Provider value={{company, registerCompany, loginCompany, logoutCompany}}>
+        <CompanyContext.Provider value={{company, setCompany, registerCompany, loginCompany, logoutCompany}}>
             {children}
         </CompanyContext.Provider>
     )

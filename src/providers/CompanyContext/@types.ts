@@ -1,3 +1,5 @@
+import {Dispatch, SetStateAction} from "react";
+
 export interface ICompanyContextProps {   
     children: React.ReactNode;
 }
@@ -5,8 +7,8 @@ export interface ICompanyContextProps {
 // Resposta da API em relação ao cadastro
 export interface ICompanyRegister {
     email: string;
+    password: string;
     name: string;
-    id: number;
 }
 
 // Resposta da API em relação ao login
@@ -16,8 +18,9 @@ export interface ICompanyLogin {
 }
 
 export interface ICompanyContext {
-    company: ICompanyRegister | null
-    registerCompany: (formData: any) => Promise<void>
-    loginCompany: (formData: any) => Promise<void>
-    logoutCompany: () => void
-}
+    company: ICompanyRegister | null;
+    setCompany: Dispatch<SetStateAction<ICompanyRegister | null>>;
+    registerCompany: (formData: any) => Promise<void>;
+    loginCompany: (formData: any) => Promise<void>;
+    logoutCompany: () => void;
+  }
