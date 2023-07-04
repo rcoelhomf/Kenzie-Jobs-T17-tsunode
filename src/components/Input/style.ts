@@ -15,6 +15,6 @@ export const StyledInput = styled.input`
         opacity: 0.5;
         font-family: 'Montserrat', sans-serif;
         font-size: 1rem;
-        font-weight: 400;
+        font-weight: 700;
     }
 `
