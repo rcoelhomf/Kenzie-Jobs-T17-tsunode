@@ -7,12 +7,15 @@ import { CompanyContext } from "../../providers/CompanyContext/index";
 import { ICompanyRegister } from "../../providers/CompanyContext/@types";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Title1 } from './../../Styles/Typography';
+import { StyledForm, StyledFormSection } from './style';
+import { Input } from './../../components/Input/index';
 
 interface FormData extends ICompanyRegister {
   password: string;
 }
 
-export const RegisterPage: React.FC = () => {
+export const RegisterPage = () => {
   const { registerCompany } = useContext(CompanyContext);
 
   const {
@@ -41,19 +44,21 @@ export const RegisterPage: React.FC = () => {
         <button>Voltar</button>
       </section>
 
-      <section>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <input type="text" {...register("email")} placeholder="Email" />
-          {errors.email && <p>{errors.email.types?.message}</p>}
+      <StyledFormSection>
+      <Title1 font="var(--color-blue)">Cadastrar-se</Title1>
 
-          <input type="password" {...register("password")} placeholder="Senha" />
-          {errors.password && <p>{errors.password.types?.message}</p>}
+        <StyledForm onSubmit={handleSubmit(onSubmit)}>
+          <Input type="text" {...register("name")} placeholder="Nome da empresa" error={errors.name} />
 
-          <input type="text" {...register("name")} placeholder="Nome da empresa" />
-          {errors.name && <p>{errors.name.types?.message}</p>}
-          <button type="submit">Submit</button>
-        </form>
-      </section>
+          <Input type="email" {...register("email")} placeholder="E-mail" error={errors.email}/>
+
+          <Input type="password" {...register("password")} placeholder="Senha" error={errors.password}/>
+
+          <Input type="password" {...register("confirm")} placeholder="Confirmar senha" error={errors.confirm}/>
+         
+          <button type="submit">Cadastrar-se</button>
+        </StyledForm>
+      </StyledFormSection>
 
       <section></section>
       <ToastContainer />
