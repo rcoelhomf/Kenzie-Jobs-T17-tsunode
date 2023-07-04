@@ -1,6 +1,6 @@
 import { createContext, useState } from "react"
 import { api } from "../../services/api"
-import { ICompanyContext, ICompanyContextProps, ICompanyRegister, ICompanyLogin, IapplySubmit } from "./@types"
+import { ICompanyContext, ICompanyContextProps, ICompanyRegister, ICompanyLogin, IapplySubmit, IJobsList } from "./@types"
 import { LoginForm } from "../../Schema/LoginSchema"
 import { RegisterForm } from "../../Schema/RegisterSchema"
 import { useNavigate } from "react-router-dom"
@@ -15,7 +15,17 @@ export const CompanyProvider = ({children}: ICompanyContextProps) => {
 
     const [company, setCompany] = useState<ICompanyRegister | null>(null)
     const [isOpen, setIsOpen] = useState<number | null>(null)
+    const [jobsList, setJobsList] = useState<IJobsList[]>([])
     const navigate = useNavigate()
+
+    const getAllJobs = async () => {
+        try {
+            await api.get("/jobs")
+            .then(({ data }) => setJobsList([...data]))
+        } catch (error) {
+            
+        }
+    }
 
     const applyJob = async (formData: IapplySubmit) => {
 
@@ -62,7 +72,7 @@ export const CompanyProvider = ({children}: ICompanyContextProps) => {
 
     return (
 
-        <CompanyContext.Provider value={{company, setCompany, isOpen, setIsOpen, applyJob, registerCompany, loginCompany, logoutCompany}}>
+        <CompanyContext.Provider value={{ company, setCompany, isOpen, setIsOpen, jobsList, getAllJobs, applyJob, registerCompany, loginCompany, logoutCompany}}>
             {children}
         </CompanyContext.Provider>
     )
