@@ -1,4 +1,13 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
+import {Title1,ParagraphMenu,Paragraph,Title2} from "../../Styles/Typography"
+import {StyledForm,StyledInput,StyledImgLupa,StyledImgRetangle,StyledButton,StyledDivJobs,StyledButtonAplly,StyledMainDiv } from"./style"
+import Lupa from "../../assets/LupaWhite.png"
+import Rectangle from "../../assets/Rectangle 2.png"
+import plus from "../../assets/add_FILL0_wght400_GRAD0_opsz48 1.png"
+import menus from "../../assets/remove_FILL0_wght400_GRAD0_opsz48 1.png"
+import { Footer } from '../../components/Footer';
+import { Header } from '../../components/Header';
+
 
 interface Job {
   userId: number;
@@ -46,45 +55,52 @@ export const SearchPage = () => {
   }
 
   return (
-    <div>
-      <h1>Busca de vagas</h1>
-      <p>Digite o que você está procurando:</p>
-      <form onSubmit={handleSearchSubmit}>
-        <input
+    <>
+    <Header/>
+    <StyledMainDiv>
+      <Title1 font='var(--color-blue)'>Busca de vagas</Title1>
+      <ParagraphMenu>Digite o que você está procurando:</ParagraphMenu>
+      <StyledForm  onSubmit={handleSearchSubmit}>
+        <StyledInput
           type="text"
           placeholder="Pesquisa"
           value={searchTerm}
           onChange={handleSearchChange}
         />
-        <button type="submit">Pesquisar</button>
-      </form>
+        <StyledButton type="submit"> <StyledImgRetangle src={Rectangle} alt="" />  <StyledImgLupa src={Lupa} alt=""/></StyledButton>
+      </StyledForm>
+
+      <StyledDivJobs>
       {submittedSearchTerm && (
         <>
-          <h2>Resultados de busca para: '{submittedSearchTerm}'</h2>
+          <ParagraphMenu >Resultados de busca para: '{submittedSearchTerm}'</ParagraphMenu>
           {jobs.length > 0 ? (
             <ul>
               {jobs.map((job) => (
                 <li key={job.id}>
-                  <h2>{job.position}</h2>
+                  <ParagraphMenu>{job.position}</ParagraphMenu>
                   {expandedJobId === job.id ? (
                     <>
-                      <p>{job.description}</p>
-                      <button onClick={() => handleToggleDescription(job.id)}>-</button>
+                      <Paragraph>{job.description}</Paragraph>
+                      <StyledButton onClick={() => handleToggleDescription(job.id)}> <img src={menus} alt=""  /></StyledButton>
                     </>
                   ) : (
                     <>
-                      <button onClick={() => handleToggleDescription(job.id)}>+</button>
+                      <StyledButton onClick={() => handleToggleDescription(job.id)}> <img src={plus} alt=""  /></StyledButton>
                     </>
                   )}
-                  <button onClick={() => handleApplyJob(job.id)}>Candidatar-se</button>
+                  <StyledButtonAplly onClick={() => handleApplyJob(job.id)}>Candidatar-se</StyledButtonAplly>
                 </li>
               ))}
             </ul>
           ) : (
-            <p>Desculpe :(! Nenhum resultado encontrado.</p>
+            <Title2>Desculpe :(! <Paragraph>Nenhum resultado encontrado.</Paragraph> </Title2>
           )}
         </>
       )}
-    </div>
+      </StyledDivJobs>
+    </StyledMainDiv>
+    <Footer/>
+    </>
   );
 }

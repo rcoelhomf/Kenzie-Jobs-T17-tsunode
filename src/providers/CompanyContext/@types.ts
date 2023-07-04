@@ -10,7 +10,7 @@ export interface ICompanyRegister {
     email: string;
     password: string;
     name: string;
-    id?: number;
+    confirm: string;
 }
 
 export interface ICompanyLogin {
