@@ -28,11 +28,21 @@ export interface IapplySubmit {
     linkedin: string;
 }
 
+export interface IJobsList {
+      userId: number;
+      id: number;
+      position: string;
+      sallary: number;
+      description: string;
+    }
+
 export interface ICompanyContext {
     company: ICompanyRegister | null;
     setCompany: Dispatch<SetStateAction<ICompanyRegister | null>>;
     isOpen: number | null;
     setIsOpen: Dispatch<SetStateAction<number | null>>;
+    jobsList: IJobsList[];
+    getAllJobs: () => void;
     applyJob: (formData: IapplySubmit) => Promise<void>;
     registerCompany: (formData: RegisterForm) => Promise<void>;
     loginCompany: (formData: LoginForm) => Promise<void>;
