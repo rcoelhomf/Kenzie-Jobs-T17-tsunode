@@ -10,7 +10,7 @@ export const Header = () => {
             <div>
                 <Link to={"/"}>acesso empresa</Link>
                 <button>Confira nossas vagas</button>
-                <StyledImg src={magnifier} alt="lupa de procurar" width="30px" height="30px" />
+                <img src={magnifier} alt="lupa de procurar" width="30px" height="30px" />
             </div>
         </StyledDiv>
     );
