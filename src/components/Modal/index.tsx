@@ -1,5 +1,5 @@
 import { ModalSchema, applyForm } from "../../Schema/ModalSchema"
-import { ParagraphBold, Title2 } from "../../Styles/Typography"
+import { Paragraph, Title2 } from "../../Styles/Typography"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Input } from "../Input"
@@ -50,7 +50,7 @@ export const Modal = ({ name, company, jobId, companyId }: IModalProps) => {
                     <Title2 font="var(--color-blue)">Candidatar-se</Title2>
                     <span onClick={() => setIsOpen(null)}>X</span>
                 </div>
-                <ParagraphBold>Você está se candidatando para {name} em {company}</ParagraphBold>
+                <Paragraph>Você está se candidatando para <span>{name}</span> em <span>{company}</span></Paragraph>
                 <form onSubmit={handleSubmit(submitForm)}>
                     <Input placeholder="Nome" error={errors.name} {...register("name")} />
                     <Input placeholder="E-mail" error={errors.email} {...register("email")} />

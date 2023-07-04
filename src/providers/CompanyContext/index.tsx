@@ -20,7 +20,11 @@ export const CompanyProvider = ({children}: ICompanyContextProps) => {
 
     const getAllJobs = async () => {
         try {
-            await api.get("/jobs")
+            await api.get("/jobs", {
+                params: {
+                    _expand: "user",
+                }
+            })
             .then(({ data }) => setJobsList([...data]))
         } catch (error) {
             
@@ -33,7 +37,7 @@ export const CompanyProvider = ({children}: ICompanyContextProps) => {
             await api.post<IapplySubmit>("/applications", formData)
             toast.success("Candidatura realizada")
         } catch (error) {
-            toast.error("Algo deu errado")
+            toast.error("Ops! Algo deu errado")
         }
     }
 
