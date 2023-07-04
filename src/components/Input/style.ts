@@ -8,7 +8,7 @@ export const StyledInput = styled.input`
     border-radius: 40px;
     border: solid 2px var(--color-blue);
 
-    padding-left: 1rem;
+    padding-left: 2rem;
 
     color: var(--color-black);
     opacity: 1;
