@@ -21,9 +21,9 @@ export const CompanyProvider = ({children}: ICompanyContextProps) => {
     const getAllJobs = async () => {
         try {
             await api.get("/jobs", {
-                // params: {
-                //     _expand: "user",
-                // }
+                params: {
+                    _expand: "user",
+                }
             })
             .then(({ data }) => setJobsList([...data]))
         } catch (error) {

@@ -6,6 +6,7 @@ import { Header } from "../../components/Header"
 import { useContext, useEffect, useState } from "react"
 import { CompanyContext } from "../../providers/CompanyContext"
 import { Modal } from "../../components/Modal"
+import { Footer } from "../../components/Footer"
 
 export const HomePage = () => {
     const { getAllJobs, jobsList, isOpen, setIsOpen } = useContext(CompanyContext)
@@ -36,18 +37,18 @@ export const HomePage = () => {
                             <div>
                                 {postId === item.id ? <img onClick={() => setPostId(null)} src={menus} alt="imagem de menos em azul" /> : <img onClick={() => setPostId(item.id)} src={plus} alt="imagem de mais em azul" /> }
                                 <div>
-                                    <Label>Nome da empresa</Label>
+                                    <Label>{item.user.name}</Label>
                                     <Title3>{item.position}</Title3>
                                 </div>
                                 <button onClick={() => setIsOpen(item.id)}>Candidatar-se</button>
                             </div>
                             {postId === item.id ? <Paragraph>{item.description}</Paragraph> : null}
-                            {isOpen === item.id ? <Modal name={item.position} company="Nome da empresa" jobId={item.id} companyId={item.userId} />: null}                            
+                            {isOpen === item.id ? <Modal name={item.position} company={item.user.name} jobId={item.id} companyId={item.userId} />: null}                            
                         </li>
                     ))}
                 </ul>
             </div>
-           
+            <Footer />
         </>
     )
 }
