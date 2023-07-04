@@ -47,6 +47,7 @@ export const HomePage = () => {
                     ))}
                 </ul>
             </div>
+           
         </>
     )
 }
