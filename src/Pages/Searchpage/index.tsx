@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 
 interface Job {
   userId: number;
@@ -9,7 +8,7 @@ interface Job {
   description: string;
 }
 
-export const SearchPage: React.FC = () => {
+export const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [jobs, setJobs] = useState<Job[]>([]);
   const [submittedSearchTerm, setSubmittedSearchTerm] = useState<string>('');
@@ -89,18 +88,3 @@ export const SearchPage: React.FC = () => {
     </div>
   );
 }
-
-export default SearchPage;
-=======
-import { Footer } from "../../components/Footer"
-
-export const SearchPage = () => {
-
-    return (
-        <>
-        <h1>SearchPage</h1>
-        <Footer/>
-        </>
-    )
-}
->>>>>>> fc6fa20700ed704176e2987cf028ccac2035036b
