@@ -30,21 +30,23 @@ export const LoginPage = () => {
         <>
         <Header />
         <StyleMain>
-            <div className="div__login-img">
-                <img src={mulherLogin}/>
-            </div>
-            <div className="login__box">
-                <Title1 className="title-login">Faça Login</Title1>
-                <form onSubmit={handleSubmit(submitLogin)}>
-                    <Input className="input-style" placeholder="E-mail" error={errors.email} {...register("email")}/>
-                    <Input className="input-style" placeholder="Senha" type="password" error={errors.password} {...register("password")}/>
-                    <div className="button_div">
-                        <button type="submit">Entrar</button>
-                    </div>
-                    <div className="span__div">
-                        <Paragraph className="span-text">Não possui cadastro?<Link className="link-text" to={"/register"}> Cadastre-se</Link></Paragraph>
-                    </div>
-                </form>
+            <div className="main__div">
+                <div className="div__login-img">
+                    <img src={mulherLogin}/>
+                </div>
+                <div className="login__box">
+                    <Title1 className="title-login">Faça Login</Title1>
+                    <form onSubmit={handleSubmit(submitLogin)}>
+                        <Input className="input-style" placeholder="E-mail" error={errors.email} {...register("email")}/>
+                        <Input className="input-style" placeholder="Senha" type="password" error={errors.password} {...register("password")}/>
+                        <div className="button_div">
+                            <button type="submit">Entrar</button>
+                        </div>
+                        <div className="span__div">
+                            <Paragraph className="span-text">Não possui cadastro?<Link className="link-text" to={"/register"}> Cadastre-se</Link></Paragraph>
+                        </div>
+                    </form>
+                </div>
             </div>
         </StyleMain>
         <Footer />
