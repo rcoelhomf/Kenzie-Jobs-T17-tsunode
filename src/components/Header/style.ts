@@ -10,7 +10,7 @@ export const StyledDiv = styled.div`
     flex-direction: row;
     justify-content: space-between;
 
-    margin: 10px;
+    padding: 20px;
 
     width: 100%;
 `

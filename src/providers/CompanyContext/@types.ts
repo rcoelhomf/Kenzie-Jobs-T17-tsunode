@@ -29,12 +29,12 @@ export interface IapplySubmit {
 }
 
 export interface IJobsList {
-      userId: number;
-      id: number;
-      position: string;
-      sallary: number;
-      description: string;
-    }
+    userId: number;
+    id: number;
+    position: string;
+    sallary: number;
+    description: string;
+}
 
 export interface ICompanyContext {
     company: ICompanyRegister | null;
