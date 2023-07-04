@@ -15,7 +15,7 @@ export const Input = forwardRef(
 
     return (
 
-        <div>
+        <div className="input__div">
             {label ? <p>{label}</p> : null}
             <StyledInput ref={ref} type={type ? type : "text"} {...rest} />
             {error ? <p>{error.message}</p> : null}
