@@ -29,7 +29,7 @@ export const HomePage = () => {
                 <img src={meeting} alt="" />
             </div>
             <div>
-                <Title1>Confira nossas vagas</Title1>
+                <Title1 font="var(--color-blue)">Confira nossas vagas</Title1>
                 <ul>
                     {jobsList.map((item) => (
                         <li key={item.id}>
@@ -40,8 +40,8 @@ export const HomePage = () => {
                                     <Title3>{item.position}</Title3>
                                 </div>
                                 <button onClick={() => setIsOpen(item.id)}>Candidatar-se</button>
-                                {postId === item.id ? <Paragraph>{item.description}</Paragraph> : null}
                             </div>
+                            {postId === item.id ? <Paragraph>{item.description}</Paragraph> : null}
                             {isOpen === item.id ? <Modal name={item.position} company="Nome da empresa" jobId={item.id} companyId={item.userId} />: null}                            
                         </li>
                     ))}

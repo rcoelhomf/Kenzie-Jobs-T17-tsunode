@@ -6,14 +6,12 @@ export interface ICompanyContextProps {
     children: React.ReactNode;
 }
 
-
 export interface ICompanyRegister {
     email: string;
     password: string;
     name: string;
     id?: number;
 }
-
 
 export interface ICompanyLogin {
     accessToken: string;
@@ -34,6 +32,7 @@ export interface IJobsList {
     position: string;
     sallary: number;
     description: string;
+    user?: ICompanyRegister;
 }
 
 export interface ICompanyContext {
@@ -42,7 +41,7 @@ export interface ICompanyContext {
     isOpen: number | null;
     setIsOpen: Dispatch<SetStateAction<number | null>>;
     jobsList: IJobsList[];
-    getAllJobs: () => void;
+    getAllJobs: () => Promise<void>;
     applyJob: (formData: IapplySubmit) => Promise<void>;
     registerCompany: (formData: RegisterForm) => Promise<void>;
     loginCompany: (formData: LoginForm) => Promise<void>;
