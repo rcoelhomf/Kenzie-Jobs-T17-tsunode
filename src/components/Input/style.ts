@@ -11,6 +11,10 @@ export const StyledInput = styled.input`
     padding-left: 1rem;
 
     ::placeholder {
-
+        color: var(--color-black);
+        opacity: 0.5;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
     }
 `

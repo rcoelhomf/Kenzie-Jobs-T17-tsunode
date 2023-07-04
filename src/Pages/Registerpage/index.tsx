@@ -5,11 +5,11 @@ import { Header } from "../../components/Header/index";
 import { registerFormSchema } from "../../Schema/RegisterSchema";
 import { CompanyContext } from "../../providers/CompanyContext/index";
 import { ICompanyRegister } from "../../providers/CompanyContext/@types";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Title1 } from './../../Styles/Typography';
-import { StyledForm, StyledFormSection } from './style';
+import { StyledForm, StyledFormSection, StyledRegisterPageContainer } from './style';
 import { Input } from './../../components/Input/index';
+import { Footer } from './../../components/Footer/index';
 
 interface FormData extends ICompanyRegister {
   password: string;
@@ -38,7 +38,7 @@ export const RegisterPage = () => {
   };
 
   return (
-    <>
+    <StyledRegisterPageContainer>
       <Header />
       <section>
         <button>Voltar</button>
@@ -60,8 +60,7 @@ export const RegisterPage = () => {
         </StyledForm>
       </StyledFormSection>
 
-      <section></section>
-      <ToastContainer />
-    </>
+      <Footer />
+    </StyledRegisterPageContainer>
   );
 };
