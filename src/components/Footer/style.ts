@@ -6,9 +6,6 @@ export const StyledFooter = styled.footer`
   height: 90px;
   background: var(--color-black);
   align-items: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
 `
 
 export const StyledDiv = styled.div`
