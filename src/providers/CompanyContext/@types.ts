@@ -11,6 +11,7 @@ export interface ICompanyRegister {
     password: string;
     name: string;
     confirm: string;
+    id?: number;
 }
 
 export interface ICompanyLogin {

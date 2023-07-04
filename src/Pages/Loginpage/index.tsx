@@ -7,7 +7,7 @@ import { LoginForm, loginFormSchema } from "../../Schema/LoginSchema.ts";
 import { Header } from "../../components/Header/index.tsx";
 import { Footer } from "../../components/Footer/index.tsx";
 import mulherLogin from "../../assets/mulherLogin.png"
-import { StyleDivFooter, StyleMain } from "./style.ts";
+import { StyleMain } from "./style.ts";
 import { Paragraph, Title1 } from "../../Styles/Typography.ts";
 import { Link } from "react-router-dom";
 

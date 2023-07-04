@@ -7,7 +7,7 @@ import { useContext, useEffect, useState } from "react";
 import { CompanyContext } from "../../providers/CompanyContext";
 import { Modal } from "../../components/Modal";
 // import { Footer } from "../../components/Footer";
-import { AboutDiv, JobListDiv, TopDivTitle } from "./style";
+import { AboutDiv, JobListDiv, JobRealList, TopDivTitle } from "./style";
 
 export const HomePage = () => {
   const { getAllJobs, jobsList, isOpen, setIsOpen } =
@@ -38,34 +38,36 @@ export const HomePage = () => {
       </AboutDiv>
       <JobListDiv>
         <Title1 className="smallText" font="var(--color-blue)">Confira nossas vagas</Title1>
-        <ul>
+        <JobRealList>
           {jobsList.map((item) => (
-            <li key={item.id}>
-              <div>
-                {postId === item.id ? (
-                  <img
-                    onClick={() => setPostId(null)}
-                    src={menus}
-                    alt="imagem de menos em azul"
-                  />
-                ) : (
-                  <img
-                    onClick={() => setPostId(item.id)}
-                    src={plus}
-                    alt="imagem de mais em azul"
-                  />
-                )}
-                <div>
-                  <Label>{item.user.name}</Label>
-                  <Title3>{item.position}</Title3>
-                </div>
-                <button onClick={() => setIsOpen(item.id)}>
-                  Candidatar-se
-                </button>
-              </div>
+            <li className="listItem" key={item.id}>
               {postId === item.id ? (
-                <Paragraph>{item.description}</Paragraph>
-              ) : null}
+                <img
+                  onClick={() => setPostId(null)}
+                  src={menus}
+                  alt="imagem de menos em azul"
+                />
+              ) : (
+                <img
+                  onClick={() => setPostId(item.id)}
+                  src={plus}
+                  alt="imagem de mais em azul"
+                />
+              )}
+              <div className="allTextsItem">
+                <div className="topItemDiv">
+                  <div>
+                    <Label>{item.user.name}</Label>
+                    <Title3>{item.position}</Title3>
+                  </div>
+                  <button className="applyBtn" onClick={() => setIsOpen(item.id)}>
+                    Candidatar-se
+                  </button>
+                </div>
+                {postId === item.id ? (
+                  <Paragraph>{item.description}</Paragraph>
+                ) : null}
+              </div>
               {isOpen === item.id ? (
                 <Modal
                   name={item.position}
@@ -76,7 +78,7 @@ export const HomePage = () => {
               ) : null}
             </li>
           ))}
-        </ul>
+        </JobRealList>
       </JobListDiv>
       {/* <Footer /> */}
     </>
