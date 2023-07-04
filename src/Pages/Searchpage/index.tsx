@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 
 interface Job {
@@ -90,3 +91,16 @@ export const SearchPage: React.FC = () => {
 }
 
 export default SearchPage;
+=======
+import { Footer } from "../../components/Footer"
+
+export const SearchPage = () => {
+
+    return (
+        <>
+        <h1>SearchPage</h1>
+        <Footer/>
+        </>
+    )
+}
+>>>>>>> fc6fa20700ed704176e2987cf028ccac2035036b

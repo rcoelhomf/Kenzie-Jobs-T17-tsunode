@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginForm, loginFormSchema } from "../../Schema/LoginSchema.ts";
 
 
+
 export const LoginPage = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<LoginForm>({
         resolver: zodResolver(loginFormSchema)
@@ -31,6 +32,7 @@ export const LoginPage = () => {
             </form>
             <span>Não possui cadastro? Cadastre-se </span>
         </div>
+       
         </>
     )
 }
