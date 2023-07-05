@@ -42,7 +42,7 @@ export interface ICompanyContext {
     isOpen: number | null;
     setIsOpen: Dispatch<SetStateAction<number | null>>;
     jobsList: IJobsList[];
-    getAllJobs: () => Promise<void>;
+    attJobList: () => void;
     applyJob: (formData: IapplySubmit) => Promise<void>;
     registerCompany: (formData: RegisterForm) => Promise<void>;
     loginCompany: (formData: LoginForm) => Promise<void>;

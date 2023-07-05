@@ -3,20 +3,18 @@ import menus from "../../assets/remove_FILL0_wght400_GRAD0_opsz48 1.png";
 import meeting from "../../assets/Rectangle 3.png";
 import { Label, Paragraph, Title1, Title3 } from "../../Styles/Typography";
 import { Header } from "../../components/Header";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { CompanyContext } from "../../providers/CompanyContext";
 import { Modal } from "../../components/Modal";
 // import { Footer } from "../../components/Footer";
 import { AboutDiv, JobListDiv, JobRealList, TopDivTitle } from "./style";
 
 export const HomePage = () => {
-  const { getAllJobs, jobsList, isOpen, setIsOpen } =
+  const { attJobList, jobsList, isOpen, setIsOpen } =
     useContext(CompanyContext);
   const [postId, setPostId] = useState<number | null>(null);
 
-  useEffect(() => {
-    getAllJobs();
-  }, []);
+  attJobList()
 
   return (
     <>
@@ -57,7 +55,8 @@ export const HomePage = () => {
               <div className="allTextsItem">
                 <div className="topItemDiv">
                   <div>
-                    <Label>{item.user.name}</Label>
+                    {/* <Label>{item.user.name}</Label> */}
+                    <Label>Nome legal</Label>
                     <Title3>{item.position}</Title3>
                   </div>
                   <button className="applyBtn" onClick={() => setIsOpen(item.id)}>
@@ -70,8 +69,10 @@ export const HomePage = () => {
               </div>
               {isOpen === item.id ? (
                 <Modal
-                  name={item.position}
-                  company={item.user.name}
+                //   name={item.position}
+                  name="Nome legal"
+                //   company={item.user.name}
+                  company="mais um nome legal"
                   jobId={item.id}
                   companyId={item.userId}
                 />

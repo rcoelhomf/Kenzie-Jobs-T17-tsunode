@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom"
 import jobs from "../../assets/jobs.png"
 import magnifier from "../../assets/lupa.png"
-import { StyledDiv, StyledImg } from './style'
+import { InnerDiv, StyledDiv, StyledImg } from './style'
 
 export const Header = () => {
     return (
         <StyledDiv>
-            <StyledImg src={jobs} alt="imagem da escrita jobs" width="69px" height="30px" />
-            <div>
-                <Link to={"/"}>acesso empresa</Link>
-                <button>Confira nossas vagas</button>
-                <img src={magnifier} alt="lupa de procurar" width="30px" height="30px" />
-            </div>
+            <Link to={"/"}><StyledImg src={jobs} alt="imagem da escrita jobs"/></Link>
+            <InnerDiv>
+                <Link className="loginLink" to={"/login"}>acesso empresa</Link>
+                <Link className="invisible" to={"/search"}>Confira nossas vagas</Link>
+                <Link to={"/search"}><img className="magnifier" src={magnifier} alt="lupa de procurar"/></Link> 
+            </InnerDiv>
         </StyledDiv>
     );
 };
