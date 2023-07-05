@@ -1,14 +1,17 @@
+import { Paragraph } from "../../Styles/Typography"
 import jobs from "../../assets/jobs.png"
-import { StyledDiv, StyledFooter, StyledImg, StyledP } from "./style"
+import { StyledFooter } from "./style"
 
-export const Footer = () =>{
+interface IFooterProps {
+    position?: string;
+}
+
+export const Footer = ({ position }: IFooterProps) =>{
     return(
         <>
-            <StyledFooter>
-                <StyledDiv>
-                    <StyledImg src={jobs} alt="imagem escrita jobs" />
-                    <StyledP>Todos os direitos reservados - Kenzie Academy Brasil</StyledP>
-                </StyledDiv>
+            <StyledFooter position={position}>
+                    <img src={jobs} alt="imagem escrita jobs" />
+                    <Paragraph font="var(--color-white)">Todos os direitos reservados - Kenzie Academy Brasil</Paragraph>
             </StyledFooter>
         </>
     )

@@ -1,18 +1,17 @@
-import plus from "../../assets/add_FILL0_wght400_GRAD0_opsz48 1.png";
-import menus from "../../assets/remove_FILL0_wght400_GRAD0_opsz48 1.png";
-import meeting from "../../assets/Rectangle 3.png";
-import { Label, Paragraph, Title1, Title3 } from "../../Styles/Typography";
-import { Header } from "../../components/Header";
-import { useContext, useState } from "react";
-import { CompanyContext } from "../../providers/CompanyContext";
-import { Modal } from "../../components/Modal";
-// import { Footer } from "../../components/Footer";
-import { AboutDiv, JobListDiv, JobRealList, TopDivTitle } from "./style";
+import plus from "../../assets/add_FILL0_wght400_GRAD0_opsz48 1.png"
+import menus from "../../assets/remove_FILL0_wght400_GRAD0_opsz48 1.png"
+import meeting from "../../assets/Rectangle 3.png"
+import { Label, Paragraph, Title1, Title3 } from "../../Styles/Typography"
+import { Header } from "../../components/Header"
+import { useContext, useState } from "react"
+import { CompanyContext } from "../../providers/CompanyContext"
+import { Modal } from "../../components/Modal"
+import { Footer } from "../../components/Footer"
+import { AboutDiv, JobListDiv, JobRealList, TopDivTitle } from "./style"
 
 export const HomePage = () => {
-  const { attJobList, jobsList, isOpen, setIsOpen } =
-    useContext(CompanyContext);
-  const [postId, setPostId] = useState<number | null>(null);
+  const { attJobList, jobsList, isOpen, setIsOpen } = useContext(CompanyContext)
+  const [postId, setPostId] = useState<number | null>(null)
 
   attJobList()
 
@@ -78,7 +77,7 @@ export const HomePage = () => {
           ))}
         </JobRealList>
       </JobListDiv>
-      {/* <Footer /> */}
+      <Footer position={"unset"} />
     </>
-  );
-};
+  )
+}
