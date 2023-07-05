@@ -9,6 +9,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
+        position: relative;
+
         width: 100%;
         height: 100vh;
         overflow: overlay;
