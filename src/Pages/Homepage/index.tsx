@@ -10,8 +10,7 @@ import { Modal } from "../../components/Modal";
 import { AboutDiv, JobListDiv, JobRealList, TopDivTitle } from "./style";
 
 export const HomePage = () => {
-  const { attJobList, jobsList, isOpen, setIsOpen } =
-    useContext(CompanyContext);
+  const { attJobList, jobsList, isOpen, setIsOpen } = useContext(CompanyContext);
   const [postId, setPostId] = useState<number | null>(null);
 
   attJobList()
@@ -80,5 +79,5 @@ export const HomePage = () => {
       </JobListDiv>
       {/* <Footer /> */}
     </>
-  );
-};
+  )
+}
