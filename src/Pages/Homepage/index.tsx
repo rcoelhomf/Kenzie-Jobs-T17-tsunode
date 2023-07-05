@@ -55,8 +55,7 @@ export const HomePage = () => {
               <div className="allTextsItem">
                 <div className="topItemDiv">
                   <div>
-                    {/* <Label>{item.user.name}</Label> */}
-                    <Label>Nome legal</Label>
+                    <Label>{item.user.name}</Label>
                     <Title3>{item.position}</Title3>
                   </div>
                   <button className="applyBtn" onClick={() => setIsOpen(item.id)}>
@@ -69,10 +68,8 @@ export const HomePage = () => {
               </div>
               {isOpen === item.id ? (
                 <Modal
-                //   name={item.position}
-                  name="Nome legal"
-                //   company={item.user.name}
-                  company="mais um nome legal"
+                  name={item.position}
+                  company={item.user.name}
                   jobId={item.id}
                   companyId={item.userId}
                 />
