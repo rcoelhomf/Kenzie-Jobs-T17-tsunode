@@ -28,7 +28,7 @@ export const LoginPage = () => {
     return (
 
         <>
-        <Header />
+        <Header loginlinkcolor="var(--color-blue)"/>
         <StyleMain>
             <div className="main__div">
                 <div className="div__login-img">

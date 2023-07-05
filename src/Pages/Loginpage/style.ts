@@ -12,6 +12,7 @@ export const StyleMain = styled.main`
     .main__div{
         max-width: 80rem;
         width: 100%;
+        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -52,18 +53,6 @@ export const StyleMain = styled.main`
                 justify-content: center;
                 width: 100%;
     
-            }
-    
-            .input-style {
-                min-width: 1rem;
-                max-width: 400px;
-                width: 100%;
-                margin-bottom: 1rem;
-                border-radius: 1rem;
-                border: 1px solid var(--color-blue);
-                font-weight: 700;
-                font-size: 1rem;
-                color: var(--color-black);
             }
     
             .button_div {

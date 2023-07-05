@@ -6,7 +6,7 @@ export const StyledInput = styled.input`
     height: 4.125rem;
 
     border-radius: 40px;
-    border: solid 2px var(--color-blue);
+    border: solid 1px var(--color-blue);
 
     padding-left: 2rem;
 
