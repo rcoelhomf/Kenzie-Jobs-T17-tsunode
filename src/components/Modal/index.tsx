@@ -1,3 +1,4 @@
+import close from "../../assets/close_FILL0_wght400_GRAD0_opsz48 1.png"
 import { ModalSchema, applyForm } from "../../Schema/ModalSchema"
 import { Paragraph, Title2 } from "../../Styles/Typography"
 import { useForm, SubmitHandler } from "react-hook-form"
@@ -46,16 +47,14 @@ export const Modal = ({ name, company, jobId, companyId }: IModalProps) => {
     return(
         <BackGroundModal>
             <ModalContainer>
-                <div>
                     <Title2 font="var(--color-blue)">Candidatar-se</Title2>
-                    <span onClick={() => setIsOpen(null)}>X</span>
-                </div>
-                <Paragraph>Você está se candidatando para <span>{name}</span> em <span>{company}</span></Paragraph>
-                <form onSubmit={handleSubmit(submitForm)}>
+                    <img className="closeBtn" onClick={() => setIsOpen(null)} src={close} alt="imagem de um X" />
+                <Paragraph>Você está se candidatando para <span className="bold">{name}</span> em <span className="bold">{company}</span></Paragraph>
+                <form className="modalForm" onSubmit={handleSubmit(submitForm)}>
                     <Input placeholder="Nome" error={errors.name} {...register("name")} />
                     <Input placeholder="E-mail" error={errors.email} {...register("email")} />
                     <Input placeholder="LinkedIn" error={errors.linkedin} {...register("linkedin")} />
-                    <button type="submit">Candidatar-se</button>
+                    <button className="formBtn" type="submit">Candidatar-se</button>
                 </form>
             </ModalContainer>
         </BackGroundModal>
