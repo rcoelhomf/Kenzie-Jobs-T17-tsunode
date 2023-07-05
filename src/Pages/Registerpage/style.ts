@@ -18,6 +18,7 @@ export const StyledFormSection = styled.section`
 `
 
 export const StyledForm = styled.form`
+    width: 518px;
     display: flex;
     flex-direction: column;
     justify-content: center;
