@@ -9,6 +9,7 @@ import { toast } from "react-toastify"
 
 export const CompanyContext = createContext<ICompanyContext>(
     {} as ICompanyContext
+    
 )
 
 export const CompanyProvider = ({children}: ICompanyContextProps) => {
@@ -16,6 +17,7 @@ export const CompanyProvider = ({children}: ICompanyContextProps) => {
     const [company, setCompany] = useState<ICompanyRegister | null>(null)
     const [isOpen, setIsOpen] = useState<number | null>(null)
     const [jobsList, setJobsList] = useState<IJobsList[]>([])
+    const [filteredJobs, setFilteredJobs] = useState<any[]>([]);
     const navigate = useNavigate()
 
     const attJobList = () => {
@@ -45,6 +47,16 @@ export const CompanyProvider = ({children}: ICompanyContextProps) => {
             toast.error("Ops! Algo deu errado")
         }
     }
+
+    const filterJob = async (formData: string) => {
+        try {
+          const { data } = await api.get(`/jobs?position_like=${formData}`);
+          setFilteredJobs(data);
+        } catch (error) {
+          toast.error("Ops! Algo deu errado");
+        }
+      };
+
 
     const registerCompany = async (formData: RegisterForm) => {
 
@@ -81,7 +93,7 @@ export const CompanyProvider = ({children}: ICompanyContextProps) => {
 
     return (
 
-        <CompanyContext.Provider value={{ company, setCompany, isOpen, setIsOpen, jobsList, attJobList, applyJob, registerCompany, loginCompany, logoutCompany}}>
+        <CompanyContext.Provider value={{ company, setCompany, isOpen, setIsOpen, jobsList, attJobList, applyJob, registerCompany, loginCompany, logoutCompany, filteredJobs, setFilteredJobs, filterJob}}>
             {children}
         </CompanyContext.Provider>
     )

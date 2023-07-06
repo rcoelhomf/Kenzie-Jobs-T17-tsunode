@@ -1,37 +1,35 @@
-import { useState, ChangeEvent, FormEvent } from 'react';
+import { CompanyContext } from "../../providers/CompanyContext/index";
+import { useContext, useState, ChangeEvent, useEffect  } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 interface Job {
   userId: number;
   id: number;
   position: string;
-  sallary: number;
+  salary: number;
   description: string;
 }
 
-export const SearchPage = () => {
-  const [searchTerm, setSearchTerm] = useState<string>('');
-  const [jobs, setJobs] = useState<Job[]>([]);
-  const [submittedSearchTerm, setSubmittedSearchTerm] = useState<string>('');
+type FormData = {
+  search: string;
+};
 
+export const SearchPage = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormData>();
+
+  const { filteredJobs, filterJob } = useContext(CompanyContext);
+  const [submittedSearchTerm, setSubmittedSearchTerm] = useState<string>('');
   const [expandedJobId, setExpandedJobId] = useState<number | null>(null);
+  const [renderedJobs, setRenderedJobs] = useState<Job[]>([]);
 
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
-  }
-
-  const handleSearchSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setSubmittedSearchTerm(searchTerm);
-    fetch(`https://kenzie-job-api.onrender.com/jobs?position_like=${searchTerm}`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then(data => setJobs(data))
-      .catch(error => console.log('Error fetching jobs:', error));
-  }
+    setSubmittedSearchTerm(event.target.value);
+  };
 
   const handleToggleDescription = (jobId: number) => {
     if (expandedJobId === jobId) {
@@ -39,52 +37,56 @@ export const SearchPage = () => {
     } else {
       setExpandedJobId(jobId);
     }
-  }
+  };
+
+  const submit: SubmitHandler<FormData> = async (formData) => {
+    try {
+      await filterJob(formData.search);
+      setSubmittedSearchTerm(formData.search);
+      reset();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handleApplyJob = (jobId: number) => {
     console.log(`Candidatando-se à vaga de emprego com ID ${jobId}`);
-  }
+  };
+
+  useEffect(() => {
+    setRenderedJobs(filteredJobs);
+  }, [filteredJobs]);
 
   return (
-    <div>
-      <h1>Busca de vagas</h1>
-      <p>Digite o que você está procurando:</p>
-      <form onSubmit={handleSearchSubmit}>
-        <input
-          type="text"
-          placeholder="Pesquisa"
-          value={searchTerm}
-          onChange={handleSearchChange}
-        />
-        <button type="submit">Pesquisar</button>
-      </form>
-      {submittedSearchTerm && (
-        <>
-          <h2>Resultados de busca para: '{submittedSearchTerm}'</h2>
-          {jobs.length > 0 ? (
-            <ul>
-              {jobs.map((job) => (
-                <li key={job.id}>
-                  <h2>{job.position}</h2>
-                  {expandedJobId === job.id ? (
-                    <>
-                      <p>{job.description}</p>
-                      <button onClick={() => handleToggleDescription(job.id)}>-</button>
-                    </>
-                  ) : (
-                    <>
-                      <button onClick={() => handleToggleDescription(job.id)}>+</button>
-                    </>
-                  )}
-                  <button onClick={() => handleApplyJob(job.id)}>Candidatar-se</button>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>Desculpe :(! Nenhum resultado encontrado.</p>
-          )}
-        </>
+    <>
+      <div>
+        <h1>Busca de vagas</h1>
+        <p>Digite o que você está procurando:</p>
+        <form onSubmit={handleSubmit(submit)}>
+          <input
+            type="text"
+            placeholder="Pesquisa"
+            {...register("search")}
+            onChange={handleSearchChange}
+          />
+          <button type="submit">Pesquisar</button>
+        </form>
+      </div>
+
+      {renderedJobs.length > 0 ? (
+        // Render the list of jobs
+        <ul>
+          {renderedJobs.map((job) => (
+            <li key={job.id}>
+              <h2>{job.position}</h2>
+              {}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        
+        <p>Nenhum resultado encontrado.</p>
       )}
-    </div>
+    </>
   );
-}
+};

@@ -47,4 +47,7 @@ export interface ICompanyContext {
     registerCompany: (formData: RegisterForm) => Promise<void>;
     loginCompany: (formData: LoginForm) => Promise<void>;
     logoutCompany: () => void;
+    filteredJobs: any[]; 
+    setFilteredJobs: React.Dispatch<React.SetStateAction<any[]>>;
+    filterJob: (formData: any) => Promise<void>;
 }
