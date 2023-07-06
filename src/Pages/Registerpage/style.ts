@@ -1,5 +1,4 @@
 import  styled  from "styled-components"
-/* import { Footer } from './../../components/Footer/index'; */
 
 export const StyledRegisterPageContainer = styled.div`
     position: relative;
@@ -7,6 +6,8 @@ export const StyledRegisterPageContainer = styled.div`
 `
 
 export const StyledFormSection = styled.section`
+    padding-bottom: 40px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,6 +16,7 @@ export const StyledFormSection = styled.section`
     gap: 4rem;
 
     width: 100%;
+    min-height: 70vh;
 `
 
 export const StyledForm = styled.form`
@@ -25,7 +27,7 @@ export const StyledForm = styled.form`
     align-items: center;
     position: relative;
     gap: 2.0625rem;
-`;
+`
 
 export const StyledDiv = styled.div`
     width: 100%;
@@ -38,7 +40,7 @@ export const StyledDiv = styled.div`
     text-align: center;
     padding: 0 10vw;
 
-.back-text {
+  .back-text {
     display:flex;
     align-items: center;
     text-align: center;
@@ -58,7 +60,7 @@ export const StyledButton = styled.button`
   margin-left: auto; 
   margin-top: 1rem; /* Adicionado espaçamento superior */
   
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 17px;
   line-height: 21px;
@@ -75,4 +77,4 @@ export const StyledButton = styled.button`
     color: var(--color-blue);
     background-color: var(--color-white);
   }
-`;
+`

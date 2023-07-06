@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from "styled-components"
 
 export const LinksDiv = styled.div`
     padding: 30px 10vw;
@@ -9,7 +9,7 @@ export const LinksDiv = styled.div`
     .linkEdit {
         text-decoration: none;
 
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-weight: 700;
         font-size: 18px;
         line-height: 20px;
@@ -33,7 +33,7 @@ export const TitleDiv = styled.div`
 
         text-decoration: none;
 
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-weight: 700;
         font-size: 17px;
         line-height: 20px;
@@ -57,7 +57,7 @@ export const TitleDiv = styled.div`
     .plusSpan {
         padding: 2px 10px;
 
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-weight: 400;
         font-size: 20px;
         line-height: 20px;

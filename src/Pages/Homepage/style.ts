@@ -113,7 +113,7 @@ export const JobRealList = styled.ul`
 
         align-self: flex-start;
 
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-weight: 700;
         font-size: 17px;
         line-height: 21px;
