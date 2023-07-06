@@ -31,9 +31,8 @@ export const RegisterPage = () => {
 
   const onSubmit: SubmitHandler<FormData> = async (formData) => {
     try {
-      console.log(formData)
-      await registerCompany(formData)
-      reset()
+      await registerCompany(formData);
+      reset();
     } catch (error) {
       console.log(error)
     }
