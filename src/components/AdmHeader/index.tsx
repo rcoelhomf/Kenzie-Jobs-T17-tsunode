@@ -3,6 +3,7 @@ import jobs from "../../assets/jobs.png"
 import { StyledHeader } from "./style"
 import { useContext } from "react"
 import { AdmContext } from "../../providers/AdmContext"
+import { toast } from "react-toastify"
 
 export const AdmHeader = () => {
     const { navigate } = useContext(AdmContext)
@@ -12,6 +13,7 @@ export const AdmHeader = () => {
         localStorage.removeItem("@TOKEN")
         localStorage.removeItem("@COMPANY")
         localStorage.removeItem("@USERID")
+        toast.success("LogOut realizado")
 
         navigate("/")
     }
