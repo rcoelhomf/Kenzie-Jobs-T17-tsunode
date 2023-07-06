@@ -7,9 +7,6 @@ import { AdmHeader } from './../../components/AdmHeader/index';
 export const AdminPage = () => {
   const companyName = localStorage.getItem("@COMPANY")
   
-
- 
-
   return (
     <>
       <AdmHeader />
