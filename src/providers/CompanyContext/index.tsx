@@ -49,8 +49,7 @@ export const CompanyProvider = ({children}: ICompanyContextProps) => {
     const registerCompany = async (formData: RegisterForm) => {
 
         try {
-            const { data } = await api.post<ICompanyRegister>("/users", formData)
-            console.log(data)
+            await api.post<ICompanyRegister>("/users", formData)
             toast.success("Empresa registrada com sucesso!");
         } catch (error) {
             console.log(error)
@@ -74,10 +73,10 @@ export const CompanyProvider = ({children}: ICompanyContextProps) => {
     }
 
     const logoutCompany = () => {
-
         setCompany(null)
         localStorage.removeItem("@TOKEN")
         localStorage.removeItem("@USERID")
+        localStorage.removeItem("@COMPANY")
     }
 
     return (
