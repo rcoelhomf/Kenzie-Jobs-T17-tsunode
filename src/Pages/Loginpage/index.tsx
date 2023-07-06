@@ -1,15 +1,15 @@
 import { SubmitHandler, useForm } from "react-hook-form"
-import { Input } from "../../components/Input";
-import { useContext } from "react";
-import { CompanyContext } from "../../providers/CompanyContext/index.tsx";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { LoginForm, loginFormSchema } from "../../Schema/LoginSchema.ts";
-import { Header } from "../../components/Header/index.tsx";
-import { Footer } from "../../components/Footer/index.tsx";
+import { Input } from "../../components/Input"
+import { useContext } from "react"
+import { CompanyContext } from "../../providers/CompanyContext/index.tsx"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { LoginForm, loginFormSchema } from "../../Schema/LoginSchema.ts"
+import { Header } from "../../components/Header/index.tsx"
+import { Footer } from "../../components/Footer/index.tsx"
 import mulherLogin from "../../assets/mulherLogin.png"
-import { StyleMain } from "./style.ts";
-import { Paragraph, Title1 } from "../../Styles/Typography.ts";
-import { Link } from "react-router-dom";
+import { StyleMain } from "./style.ts"
+import { Paragraph, Title1 } from "../../Styles/Typography.ts"
+import { Link } from "react-router-dom"
 
 
 export const LoginPage = () => {
@@ -28,7 +28,7 @@ export const LoginPage = () => {
     return (
 
         <>
-        <Header />
+        <Header loginlinkcolor="var(--color-blue)"/>
         <StyleMain>
             <div className="main__div">
                 <div className="div__login-img">

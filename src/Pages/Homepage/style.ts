@@ -52,7 +52,7 @@ export const AboutDiv = styled.div`
 
 export const JobListDiv = styled.div`
     padding: 0 10vw;
-    gap: 20px;
+    gap: 6vw;
 
     display: flex;
     flex-direction: column;
@@ -69,7 +69,7 @@ export const JobRealList = styled.ul`
     width: 100%;
     max-width: 1200px;
     padding-bottom: 40px;
-    gap: 20px;
+    gap: 40px;
 
     display: flex;
     flex-direction: column;
@@ -113,7 +113,7 @@ export const JobRealList = styled.ul`
 
         align-self: flex-start;
 
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-weight: 700;
         font-size: 17px;
         line-height: 21px;
@@ -129,5 +129,6 @@ export const JobRealList = styled.ul`
     .applyBtn:hover {
         color: var(--color-white);
         background-color: var(--color-blue);
+        transition: 665ms;
     }
 `

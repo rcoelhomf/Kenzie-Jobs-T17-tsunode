@@ -1,5 +1,7 @@
 import styled from "styled-components"
 
+
+
 export const StyledDiv = styled.header`
     width: 100%;
     height: 100px;
@@ -17,7 +19,7 @@ export const StyledDiv = styled.header`
     }
 `
 
-export const InnerDiv = styled.div`
+export const InnerDiv = styled.div<{ loginlinkcolor?: string }>`
     width: 100%;
     
     display: flex;
@@ -31,21 +33,25 @@ export const InnerDiv = styled.div`
 
     .loginLink {
         text-decoration: none;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-weight: 700;
         font-size: 16px;
         line-height: 20px;
         align-self: center;
-        color: var(--color-black);
+        color: ${props => props.loginlinkcolor || "var(--color-black)"};
 
         cursor: pointer;
+    }
+
+    .loginLink:hover {
+        color: var(--color-blue);
     }
 
     .invisible {
         display: none;
         padding: 15px 20px;
 
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-weight: 700;
         font-size: 16px;
         line-height: 20px;
@@ -60,9 +66,12 @@ export const InnerDiv = styled.div`
         @media(min-width: 1025px) {
             display: block;
         }
+
+        transition: 665ms;
     }
 
     .invisible:hover {
+        transition: 665ms;
         background-color: transparent;
         color: var(--color-blue);
     }

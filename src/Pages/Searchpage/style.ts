@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from "styled-components"
 
 export const StyledMainDiv = styled.div`
     width:100vw;
@@ -9,6 +9,7 @@ export const StyledMainDiv = styled.div`
     justify-content: center;
     align-items: center;
 
+    position: relative;
 `
 
 
@@ -33,7 +34,7 @@ export const StyledInput = styled.input`
     border: 1px solid var(--color-blue);
     border-radius: 25px;
 
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size:17px;
     line-height: 20px;
@@ -80,7 +81,7 @@ export const StyledButtonAplly = styled.button`
     border: 1px solid var(--color-blue);
     border-radius: 25px;
 
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size:17px;
     line-height: 20px;

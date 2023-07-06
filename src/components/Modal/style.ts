@@ -14,10 +14,54 @@ export const BackGroundModal = styled.div`
 `
 
 export const ModalContainer = styled.div`
+    position: relative;
     width: 90%;
     max-width: 650px;
     height: 546px;
     max-height: max-content;
+    padding: 40px 30px;
 
     background-color: var(--color-white);
+
+    .closeBtn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .bold {
+        font-weight: 700;
+    }
+
+    .modalForm {
+        gap: 20px;
+
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .formBtn {
+        padding: 20px 40px;
+
+        align-self: flex-end;
+
+        background-color: var(--color-blue);
+        border: 1px solid var(--color-blue);
+        border-radius: 255px;
+
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 21px;
+        color: var(--color-white);
+
+        cursor: pointer;
+    }
+
+    .formBtn:hover {
+        background-color: transparent;
+        color: var(--color-blue);
+        transition: 665ms;
+    }
 `

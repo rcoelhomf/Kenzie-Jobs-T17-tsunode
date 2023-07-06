@@ -1,32 +1,37 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
-export const StyledFooter = styled.footer`
-  display: flex;
+interface IPosition {
+  position?: string;
+  position2?: string;
+}
+
+export const StyledFooter = styled.footer<IPosition>`
+  position: ${({ position }) => position ? position : "absolute"};
+  bottom: 0;
   width: 100%;
-  height: 90px;
-  background: var(--color-black);
-  align-items: center;
-`
+  height: 200px;
+  padding: 20px 10vw;
 
-export const StyledDiv = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
 
-  flex-grow: 1;
+  background-color: var(--color-black);
 
-  justify-content: space-between;
-`
-export const StyledImg = styled.img`
-  margin-left: 100px; 
-`
+  @media(min-width: 1025px) {
+    height: 100px;
 
-export const StyledP = styled.p`
-  font-family: 'Inter', sans-serif;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-  color: var(--color-white);
+  @media(max-height: 800px) {
+    position: unset;
+  }
 
-  font-weight: 400;
-  font-size: 17px;
-  line-height:36px;
-  
-  margin-right: 100px;
+  @media(min-height: 1130px){
+    position: ${({ position2 }) => position2 ? position2 : "absolute"};
+  }
 `

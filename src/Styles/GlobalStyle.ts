@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
     :root {
@@ -9,6 +9,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
+        position: relative;
+
         width: 100%;
         height: 100vh;
         overflow: overlay;
