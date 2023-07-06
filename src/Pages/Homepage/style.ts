@@ -129,5 +129,6 @@ export const JobRealList = styled.ul`
     .applyBtn:hover {
         color: var(--color-white);
         background-color: var(--color-blue);
+        transition: 665ms;
     }
 `
