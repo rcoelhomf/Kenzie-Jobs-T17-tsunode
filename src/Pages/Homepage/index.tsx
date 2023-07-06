@@ -54,7 +54,7 @@ export const HomePage = () => {
               <div className="allTextsItem">
                 <div className="topItemDiv">
                   <div>
-                    <Label>{item.user.name}</Label>
+                    <Label>{item.user?.name}</Label>
                     <Title3>{item.position}</Title3>
                   </div>
                   <button className="applyBtn" onClick={() => setIsOpen(item.id)}>
@@ -68,7 +68,7 @@ export const HomePage = () => {
               {isOpen === item.id ? (
                 <Modal
                   name={item.position}
-                  company={item.user.name}
+                  company={item.user?.name}
                   jobId={item.id}
                   companyId={item.userId}
                 />
@@ -77,7 +77,7 @@ export const HomePage = () => {
           ))}
         </JobRealList>
       </JobListDiv>
-      <Footer position={"unset"} />
+      <Footer position={"unset"} position2="unset"/>
     </>
   )
 }

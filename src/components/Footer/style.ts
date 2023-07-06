@@ -1,7 +1,8 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 interface IPosition {
   position?: string;
+  position2?: string;
 }
 
 export const StyledFooter = styled.footer<IPosition>`
@@ -24,5 +25,13 @@ export const StyledFooter = styled.footer<IPosition>`
 
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  @media(max-height: 800px) {
+    position: unset;
+  }
+
+  @media(min-height: 1130px){
+    position: ${({ position2 }) => position2 ? position2 : "absolute"};
   }
 `

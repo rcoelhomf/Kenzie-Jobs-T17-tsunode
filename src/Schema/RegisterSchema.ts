@@ -18,6 +18,6 @@ export const registerFormSchema = z.object({
 }) => password === confirm, {
     message: "As senhas não correspondem.",
     path: ["confirm"],
-});
+})
 
 export type RegisterForm = z.infer<typeof registerFormSchema>

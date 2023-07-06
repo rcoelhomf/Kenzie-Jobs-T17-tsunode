@@ -17,7 +17,7 @@ export const AdmApplications = () => {
         setOpeniD(prevOpenId => (prevOpenId === id ? null : id))
     }
 
-    JobsApplicationsAdm();
+    JobsApplicationsAdm()
 
     return (
         <>

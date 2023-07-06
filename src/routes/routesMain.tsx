@@ -1,13 +1,13 @@
-import { Route, Routes } from "react-router-dom";
-import { HomePage } from "../Pages/Homepage";
-import { SearchPage } from "../Pages/Searchpage";
-import { LoginPage } from "../Pages/Loginpage";
-import { RegisterPage } from "../Pages/Registerpage";
-import { AdminPage } from "../Pages/Adminpage";
-import { AdmApplications } from "../Pages/Adminpage/AdmApplications";
-import { AdmEdit } from "../Pages/Adminpage/AdminEdit";
-import { AdmJobs } from "../Pages/Adminpage/AdmJobs";
-import { AdmNewJob } from "../Pages/Adminpage/AdmNewJob";
+import { Route, Routes } from "react-router-dom"
+import { HomePage } from "../Pages/Homepage"
+import { SearchPage } from "../Pages/Searchpage"
+import { LoginPage } from "../Pages/Loginpage"
+import { RegisterPage } from "../Pages/Registerpage"
+import { AdminPage } from "../Pages/Adminpage"
+import { AdmApplications } from "../Pages/Adminpage/AdmApplications"
+import { AdmEdit } from "../Pages/Adminpage/AdminEdit"
+import { AdmJobs } from "../Pages/Adminpage/AdmJobs"
+import { AdmNewJob } from "../Pages/Adminpage/AdmNewJob"
 
 export const RoutesMain = () => {
 

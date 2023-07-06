@@ -1,4 +1,4 @@
-import { NavigateFunction } from "react-router-dom";
+import { NavigateFunction } from "react-router-dom"
 
 export interface IAdmContextProps {
     children: React.ReactNode;
@@ -10,13 +10,15 @@ export interface IJobItem {
     sallary: number;
     description: string;
 }
+
 export interface IJobApplications {
     id: number
     jobId: number
     name: string
     email: string
     linkedin: string
-  }
+}
+
 export interface IAdmContext {
     jobId: number | null;
     setJobId: React.Dispatch<React.SetStateAction<number | null>>;

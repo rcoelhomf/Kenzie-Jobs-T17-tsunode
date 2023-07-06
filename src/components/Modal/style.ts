@@ -50,7 +50,7 @@ export const ModalContainer = styled.div`
         border: 1px solid var(--color-blue);
         border-radius: 255px;
 
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-weight: 700;
         font-size: 17px;
         line-height: 21px;
@@ -62,5 +62,6 @@ export const ModalContainer = styled.div`
     .formBtn:hover {
         background-color: transparent;
         color: var(--color-blue);
+        transition: 665ms;
     }
 `

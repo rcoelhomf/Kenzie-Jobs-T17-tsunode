@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from "styled-components"
 
 export const StyledMainDiv = styled.div`
     padding: 0 10vw;
@@ -17,7 +17,7 @@ export const StyleLinksDiv = styled.div`
     .linkEdit {
         text-decoration: none;
 
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-weight: 700;
         font-size: 18px;
         line-height: 20px;
@@ -31,14 +31,14 @@ export const StyleLinksDiv = styled.div`
 
 `
 export const StyledA = styled.a`
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 21px;
     line-height: 26px;
     color:"var(--color-black)"
 `
 export const StyledSpan = styled.span`
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 700;
     font-size: 18px;
     line-height: 36px;

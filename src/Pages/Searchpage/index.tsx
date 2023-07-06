@@ -1,12 +1,12 @@
-import { useState, ChangeEvent, FormEvent } from 'react';
+import { useState, ChangeEvent, FormEvent } from "react"
 import {Title1,ParagraphMenu,Paragraph,Title2} from "../../Styles/Typography"
 import {StyledForm,StyledInput,StyledImgLupa,StyledImgRetangle,StyledButton,StyledDivJobs,StyledButtonAplly,StyledMainDiv } from"./style"
 import Lupa from "../../assets/LupaWhite.png"
 import Rectangle from "../../assets/Rectangle 2.png"
 import plus from "../../assets/add_FILL0_wght400_GRAD0_opsz48 1.png"
 import menus from "../../assets/remove_FILL0_wght400_GRAD0_opsz48 1.png"
-import { Footer } from '../../components/Footer';
-import { Header } from '../../components/Header';
+import { Footer } from "../../components/Footer"
+import { Header } from "../../components/Header"
 
 
 interface Job {
@@ -18,48 +18,48 @@ interface Job {
 }
 
 export const SearchPage = () => {
-  const [searchTerm, setSearchTerm] = useState<string>('');
-  const [jobs, setJobs] = useState<Job[]>([]);
-  const [submittedSearchTerm, setSubmittedSearchTerm] = useState<string>('');
+  const [searchTerm, setSearchTerm] = useState<string>("")
+  const [jobs, setJobs] = useState<Job[]>([])
+  const [submittedSearchTerm, setSubmittedSearchTerm] = useState<string>("")
 
 
-  const [expandedJobId, setExpandedJobId] = useState<number | null>(null);
+  const [expandedJobId, setExpandedJobId] = useState<number | null>(null)
 
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
+    setSearchTerm(event.target.value)
   }
 
   const handleSearchSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setSubmittedSearchTerm(searchTerm);
+    event.preventDefault()
+    setSubmittedSearchTerm(searchTerm)
     fetch(`https://kenzie-job-api.onrender.com/jobs?position_like=${searchTerm}`)
       .then(response => {
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error(`HTTP error! status: ${response.status}`)
         }
-        return response.json();
+        return response.json()
       })
       .then(data => setJobs(data))
-      .catch(error => console.log('Error fetching jobs:', error));
+      .catch(error => console.log("Error fetching jobs:", error))
   }
 
   const handleToggleDescription = (jobId: number) => {
     if (expandedJobId === jobId) {
-      setExpandedJobId(null);
+      setExpandedJobId(null)
     } else {
-      setExpandedJobId(jobId);
+      setExpandedJobId(jobId)
     }
   }
 
   const handleApplyJob = (jobId: number) => {
-    console.log(`Candidatando-se à vaga de emprego com ID ${jobId}`);
+    console.log(`Candidatando-se à vaga de emprego com ID ${jobId}`)
   }
 
   return (
     <>
     <Header/>
     <StyledMainDiv>
-      <Title1 font='var(--color-blue)'>Busca de vagas</Title1>
+      <Title1 font="var(--color-blue)">Busca de vagas</Title1>
       <ParagraphMenu>Digite o que você está procurando:</ParagraphMenu>
       <StyledForm  onSubmit={handleSearchSubmit}>
         <StyledInput
@@ -74,7 +74,7 @@ export const SearchPage = () => {
       <StyledDivJobs>
       {submittedSearchTerm && (
         <>
-          <ParagraphMenu >Resultados de busca para: '{submittedSearchTerm}'</ParagraphMenu>
+          <ParagraphMenu >Resultados de busca para: "{submittedSearchTerm}"</ParagraphMenu>
           {jobs.length > 0 ? (
             <ul>
               {jobs.map((job) => (
@@ -103,5 +103,5 @@ export const SearchPage = () => {
     <Footer/>
     </StyledMainDiv>
     </>
-  );
+  )
 }
