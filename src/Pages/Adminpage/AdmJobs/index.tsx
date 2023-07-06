@@ -6,6 +6,7 @@ import { AdmContext } from "../../../providers/AdmContext"
 import { ParagraphMenu, Title1, Title3 } from "../../../Styles/Typography"
 import { Footer } from "../../../components/Footer"
 import { JobsList, LinksDiv, TitleDiv } from "./style"
+import { AdmHeader } from "../../../components/AdmHeader"
 
 export const AdmJobs = () => {
     const { setJobId, getCompanyJobs, jobsList, deleteJob, navigate } = useContext(AdmContext)
@@ -19,13 +20,7 @@ export const AdmJobs = () => {
 
     return (
         <>
-            <header>
-                <img src="" alt="" />
-                <div>
-                    <Link to={"/admin"}>KE</Link>
-                    <button>Sair</button>
-                </div>
-            </header>
+            <AdmHeader />
             <LinksDiv>
                 <ParagraphMenu font="var(--color-blue)">Minhas vagas</ParagraphMenu>
                 <Link className="linkEdit" to={"/admin/applications"}>Minhas candidaturas</Link>
@@ -45,7 +40,7 @@ export const AdmJobs = () => {
                     </li>
                 )): <Title3>Nenhuma vaga criada até o momento</Title3> }
             </JobsList>
-            <Footer />
+            <Footer position="unset" />
         </>
     )
 }

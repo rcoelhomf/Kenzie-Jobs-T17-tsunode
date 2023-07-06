@@ -18,6 +18,7 @@ export const LinksDiv = styled.div`
 
     .linkEdit:hover {
         color: var(--color-blue);
+        transition: 665ms;
     }
 `
 
@@ -25,6 +26,7 @@ export const TitleDiv = styled.div`
     padding: 0 10vw;
 
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 
@@ -47,11 +49,13 @@ export const TitleDiv = styled.div`
     .linkCreate:hover {
         background-color: transparent;
         color: var(--color-blue);
+        transition: 665ms;
     }
 
     .linkCreate:hover > span {
         border: 2px solid var(--color-blue);
         color: var(--color-blue);
+        transition: 665ms;
     }
 
     .plusSpan {
@@ -71,6 +75,8 @@ export const TitleDiv = styled.div`
 
 export const JobsList = styled.ul`
     width: 100%;
+    min-height: 64.1vh;
+    height: max-content;
     padding: 50px 10vw;
     gap: 20px;
 
@@ -80,7 +86,7 @@ export const JobsList = styled.ul`
     .listItem {
         width: 100%;
         height: 122px;
-        padding: 0 40px;
+        padding: 0 2vw;
 
         display: flex;
         justify-content: space-between;
@@ -107,5 +113,6 @@ export const JobsList = styled.ul`
     .innerDivImg:hover {
         border: 1px solid var(--color-blue);
         background-color: var(--color-white);
+        transition: 665ms;
     }
 `

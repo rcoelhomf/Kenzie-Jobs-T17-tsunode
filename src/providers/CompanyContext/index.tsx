@@ -64,6 +64,7 @@ export const CompanyProvider = ({children}: ICompanyContextProps) => {
             setCompany(data.user)
             localStorage.setItem("@TOKEN", data.accessToken)
             localStorage.setItem("@USERID", JSON.stringify(data.user.id))
+            localStorage.setItem("@COMPANY", data.user.name)
             toast.success("Login realizado com sucesso")
             navigate("/admin")
         } catch (error) {
