@@ -31,6 +31,9 @@ export const StyleMain = styled.main`
     
             max-width: 33rem;
             width: 100%;
+
+            margin-left:1rem ;
+
             display: flex;
             flex-wrap: wrap;
             flex-direction: column;
@@ -40,19 +43,20 @@ export const StyleMain = styled.main`
             form {
     
                 width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
             }
     
             .title-login {
                 
-                color: var(--color-blue);
                 margin-bottom: 1rem;
             }
-    
-            .input__div {
-                display: flex;
-                justify-content: center;
+
+            
+            .input-style{
                 width: 100%;
-    
+                margin-bottom: 1rem;
             }
     
             .button_div {
@@ -89,13 +93,6 @@ export const StyleMain = styled.main`
     
         }
     }
-
-
-`
-
-export const StyleDivFooter = styled.div`
-
-    border: 2px solid red;
 
 
 `
