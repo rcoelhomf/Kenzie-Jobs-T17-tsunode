@@ -27,6 +27,7 @@ export const Modal = ({ name, company, jobId, companyId }: IModalProps) => {
         const applyObject: IapplySubmit = {...formData, jobId: jobId, userId: companyId}
 
         applyJob(applyObject)
+        setIsOpen(null)
     }
 
     useEffect(() => {
@@ -54,7 +55,7 @@ export const Modal = ({ name, company, jobId, companyId }: IModalProps) => {
                     <Input placeholder="Nome" error={errors.name} {...register("name")} />
                     <Input placeholder="E-mail" error={errors.email} {...register("email")} />
                     <Input placeholder="LinkedIn" error={errors.linkedin} {...register("linkedin")} />
-                    <button className="formBtn" type="submit">Candidatar-se</button>
+                    <button  className="formBtn" type="submit">Candidatar-se</button>
                 </form>
             </ModalContainer>
         </BackGroundModal>
