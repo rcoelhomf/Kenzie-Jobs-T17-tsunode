@@ -5,7 +5,7 @@ interface IStyledTexts {
 }
 
 export const Title1 = styled.h1<IStyledTexts>`
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 64px;
     line-height: 78px;
@@ -13,7 +13,7 @@ export const Title1 = styled.h1<IStyledTexts>`
 `
 
 export const Title2 = styled.h2<IStyledTexts>`
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 44px;
     line-height: 54px;
@@ -21,7 +21,7 @@ export const Title2 = styled.h2<IStyledTexts>`
 `
 
 export const Title3 = styled.h3<IStyledTexts>`
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 21px;
     line-height: 26px;
@@ -29,7 +29,7 @@ export const Title3 = styled.h3<IStyledTexts>`
 `
 
 export const Paragraph = styled.p<IStyledTexts>`
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 18px;
     line-height: 36px;
@@ -37,7 +37,7 @@ export const Paragraph = styled.p<IStyledTexts>`
 `
 
 export const ParagraphBold = styled.p<IStyledTexts>`
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 700;
     font-size: 18px;
     line-height: 36px;
@@ -45,7 +45,7 @@ export const ParagraphBold = styled.p<IStyledTexts>`
 `
 
 export const ParagraphMenu = styled.p<IStyledTexts>`
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 18px;
     line-height: 20px;
@@ -53,7 +53,7 @@ export const ParagraphMenu = styled.p<IStyledTexts>`
 `
 
 export const Label = styled.p<IStyledTexts>`
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-size: 17px;
     line-height: 21px;

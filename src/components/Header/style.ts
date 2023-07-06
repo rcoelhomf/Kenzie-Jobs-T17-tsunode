@@ -33,21 +33,25 @@ export const InnerDiv = styled.div<{ loginlinkcolor?: string }>`
 
     .loginLink {
         text-decoration: none;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-weight: 700;
         font-size: 16px;
         line-height: 20px;
         align-self: center;
-        color: ${props => props.loginlinkcolor || 'var(--color-black)'};
+        color: ${props => props.loginlinkcolor || "var(--color-black)"};
 
         cursor: pointer;
+    }
+
+    .loginLink:hover {
+        color: var(--color-blue);
     }
 
     .invisible {
         display: none;
         padding: 15px 20px;
 
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-weight: 700;
         font-size: 16px;
         line-height: 20px;

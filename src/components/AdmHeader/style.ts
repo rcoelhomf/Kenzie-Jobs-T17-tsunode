@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from "styled-components"
 
 export const StyledHeader = styled.header`
     height: 90px;
@@ -18,7 +18,7 @@ export const StyledHeader = styled.header`
         padding: 12px;
 
         text-decoration: none;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-weight: 700;
         font-size: 14px;
         line-height: 20px;
@@ -38,7 +38,7 @@ export const StyledHeader = styled.header`
     .logOutBtn {
         padding: 10px 30px;
 
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-weight: 700;
         font-size: 14px;
         line-height: 20px;

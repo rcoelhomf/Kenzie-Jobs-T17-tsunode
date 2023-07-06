@@ -33,9 +33,9 @@ export const SearchPage = () => {
 
   const handleToggleDescription = (jobId: number) => {
     if (expandedJobId === jobId) {
-      setExpandedJobId(null);
+      setExpandedJobId(null)
     } else {
-      setExpandedJobId(jobId);
+      setExpandedJobId(jobId)
     }
   };
 

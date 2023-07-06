@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react"
-import { IAdmContext, IAdmContextProps, IJobItem } from "./@types"
+import { IAdmContext, IAdmContextProps, IJobItem,IJobApplications } from "./@types"
 import { api } from "../../services/api"
 import { toast } from "react-toastify"
 import { useNavigate } from "react-router-dom"
@@ -12,7 +12,24 @@ export const AdmProvider = ({ children }: IAdmContextProps) => {
 
     const [ jobId, setJobId ] = useState<number | null>(null)
     const [ jobsList, setJobsList ] = useState<IJobItem[]>([])
+    const [jobsApplications, setJobsApplications] = useState < IJobApplications[]>([])
     const navigate = useNavigate()
+
+
+    const JobsApplicationsAdm = async  () =>{
+        useEffect(() =>{
+            const getApplications = async () => {
+                const response = await api.get<IJobApplications[]>("/jobs/1/applications")
+
+                setJobsApplications(response.data)
+            }
+
+            getApplications()
+        })
+    }
+
+
+
 
     const getCompanyJobs = () => {
         useEffect(() => {
@@ -56,7 +73,7 @@ export const AdmProvider = ({ children }: IAdmContextProps) => {
     }
     
     return (
-        <AdmContext.Provider value={{ setJobId, getCompanyJobs, jobsList, deleteJob, navigate, jobId }}>
+        <AdmContext.Provider value={{ setJobId, getCompanyJobs, jobsList, deleteJob, navigate, jobId, jobsApplications, JobsApplicationsAdm,}}>
             { children }
         </AdmContext.Provider>
     )

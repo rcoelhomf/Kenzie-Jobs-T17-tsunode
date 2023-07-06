@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
 import jobs from "../../assets/jobs.png"
 import magnifier from "../../assets/lupa.png"
-import { InnerDiv, StyledDiv, StyledImg } from './style'
-import { FC } from "react";
+import { InnerDiv, StyledDiv, StyledImg } from "./style"
+import { FC } from "react"
 
 interface HeaderProps {
     loginlinkcolor?: string;
@@ -18,5 +18,5 @@ export const Header: FC<HeaderProps> = ({ loginlinkcolor }) => {
                 <Link to={"/search"}><img className="magnifier" src={magnifier} alt="lupa de procurar"/></Link> 
             </InnerDiv>
         </StyledDiv>
-    );
+    )
 }

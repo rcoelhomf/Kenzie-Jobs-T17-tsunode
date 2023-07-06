@@ -33,7 +33,7 @@ export interface IJobsList {
     position: string;
     sallary: number;
     description: string;
-    user: ICompanyRegister;
+    user?: ICompanyRegister;
 }
 
 export interface ICompanyContext {

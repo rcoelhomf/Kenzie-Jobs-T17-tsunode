@@ -11,7 +11,7 @@ import { BackGroundModal, ModalContainer } from "./style"
 
 interface IModalProps {
     name: string;
-    company: string;
+    company?: string;
     jobId: number;
     companyId: number;
 }

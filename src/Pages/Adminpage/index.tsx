@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import { Paragraph, ParagraphMenu, Title1} from "../../Styles/Typography";
-import { Footer } from "../../components/Footer";
-import { LinksDiv, TitleDiv, GreetingDiv } from "./style";
-import { AdmHeader } from './../../components/AdmHeader/index';
+import { Link } from "react-router-dom"
+import { Paragraph, Title1} from "../../Styles/Typography"
+import { Footer } from "../../components/Footer"
+import { LinksDiv, TitleDiv, GreetingDiv } from "./style"
+import { AdmHeader } from "./../../components/AdmHeader/index"
 
 export const AdminPage = () => {
   const companyName = localStorage.getItem("@COMPANY")
@@ -28,5 +28,5 @@ export const AdminPage = () => {
       </LinksDiv>
       <Footer />
     </>
-  );
-};
+  )
+}
