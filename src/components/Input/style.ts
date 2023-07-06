@@ -23,3 +23,11 @@ export const StyledInput = styled.input`
         font-weight: 700;
     }
 `
+
+export const StyledParagraph = styled.p`
+    color: red;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+`

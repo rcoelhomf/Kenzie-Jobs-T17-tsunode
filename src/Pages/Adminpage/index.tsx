@@ -21,7 +21,7 @@ export const AdminPage = () => {
       
 
       <LinksDiv>
-        <ParagraphMenu >Minhas vagas</ParagraphMenu>
+        <Link className="linkEdit" to={"/admin/jobs"}>Minhas vagas</Link>
         <Link className="linkEdit" to={"/admin/applications"}>
           Minhas candidaturas
         </Link>

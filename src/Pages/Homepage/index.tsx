@@ -13,7 +13,7 @@ export const HomePage = () => {
   const { attJobList, jobsList, isOpen, setIsOpen } = useContext(CompanyContext)
   const [postId, setPostId] = useState<number | null>(null)
 
-  console.log(attJobList())
+  attJobList()
 
   return (
     <>

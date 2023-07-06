@@ -1,5 +1,5 @@
 import { ForwardedRef, InputHTMLAttributes, forwardRef } from "react"
-import { StyledInput } from './style';
+import { StyledInput, StyledParagraph } from './style';
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement>{
 
@@ -16,7 +16,7 @@ export const Input = forwardRef(
         <>
             {label ? <p>{label}</p> : null}
             <StyledInput ref={ref} type={type ? type : "text"} {...rest} />
-            {error ? <p>{error.message}</p> : null}
+            {error ? <StyledParagraph>{error.message}</StyledParagraph> : null}
         </>
     )
 })   
