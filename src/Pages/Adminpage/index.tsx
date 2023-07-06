@@ -1,7 +1,11 @@
+import { AdmHeader } from "../../components/AdmHeader"
+
 export const AdminPage = () => {
 
     return (
-
-        <h1>Admin Page</h1>
+        <>
+            <AdmHeader />
+            <h1>Admin Page</h1>
+        </>
     )
 }
