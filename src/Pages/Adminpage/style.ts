@@ -69,43 +69,11 @@ export const TitleDiv = styled.div`
     }
 `
 
-export const JobsList = styled.ul`
-    width: 100%;
-    padding: 50px 10vw;
-    gap: 20px;
+export const GreetingDiv = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
 
-    display: flex;
-    flex-direction: column;
-
-    .listItem {
-        width: 100%;
-        height: 122px;
-        padding: 0 40px;
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        cursor: pointer;
-    }
-
-    .listItem:hover {
-        background-color: var(--color-lightblue);
-    }
-
-    .innerDiv {
-        gap: 20px;
-
-        display: flex;
-    }
-
-    .innerDivImg {
-        border: 1px solid transparent;
-        border-radius: 4px;
-    }
-
-    .innerDivImg:hover {
-        border: 1px solid var(--color-blue);
-        background-color: var(--color-white);
-    }
+  padding: 0 10vw;
+  height: 4rem;
 `

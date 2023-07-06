@@ -76,6 +76,7 @@ export const CompanyProvider = ({children}: ICompanyContextProps) => {
         setCompany(null)
         localStorage.removeItem("@TOKEN")
         localStorage.removeItem("@USERID")
+        localStorage.removeItem("@COMPANY")
     }
 
     return (
