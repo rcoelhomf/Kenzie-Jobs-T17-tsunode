@@ -21,7 +21,7 @@ export const RoutesMain = () => {
             <Route path="/admin" element={<AdminPage />}/>
             <Route path="/admin/applications" element={<AdmApplications />}/>
             <Route path="/admin/edit" element={<AdmEdit />}/>
-            <Route path="/admin/Jobs" element={<AdmJobs />}/>
+            <Route path="/admin/jobs" element={<AdmJobs />}/>
             <Route path="/admin/newjob" element={<AdmNewJob />}/>
         </Routes>
     )
