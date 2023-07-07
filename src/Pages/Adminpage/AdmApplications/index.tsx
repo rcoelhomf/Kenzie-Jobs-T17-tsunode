@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { AdmHeader } from "../../../components/AdmHeader"
 import { Footer } from "../../../components/Footer"
 import {Title1,ParagraphMenu,Title3,Paragraph,} from "../../../Styles/Typography"
-import {StyledA,StyledMainDiv,StyleLinksDiv,StyledUl,StyledLi,StyledSpan,StyledDivTitle} from "./style"
+import {StyledMainDiv,StyleLinksDiv,StyledUl,StyledLi,StyledSpan,StyledDivTitle} from "./style"
 import { useContext, useState } from "react"
 import { AdmContext } from "../../../providers/AdmContext"
 import menus from "../../../assets/remove_FILL0_wght400_GRAD0_opsz48 1.png"
@@ -28,7 +28,7 @@ export const AdmApplications = () => {
         <Link className="linkEdit" to={"/admin/jobs"}>Minhas vagas</Link>
         </StyleLinksDiv>
 
-        <Title1 font="var(--color-blue)">Minhas Candidaturas</Title1>
+        <Title1 font="var(--color-blue)" className="Title">Minhas Candidaturas</Title1>
 
         <StyledUl>
             {
@@ -54,11 +54,11 @@ export const AdmApplications = () => {
 
                 {openiD === item.id && (
               <> 
-                <Paragraph>Detalhes da candidatura:</Paragraph>
-                <Paragraph>email: <StyledSpan>{item.email}</StyledSpan></Paragraph>
-                <StyledA href={item.linkedin} target="_blank" rel="noopener noreferrer">
+                <Paragraph className="Text__Details">Detalhes da candidatura:</Paragraph>
+                <Paragraph className="Email">email: <StyledSpan>{item.email}</StyledSpan></Paragraph>
+                <a className="Href" href={item.linkedin} target="_blank" >
                   Linkedin
-                </StyledA>
+                </a>
                 
               </>
             )}
@@ -67,7 +67,7 @@ export const AdmApplications = () => {
         ))}
         </StyledUl>
         </StyledMainDiv>
-        <Footer/>
+        <Footer position={"unset"} position2={"unset"}/>
         </>
     )
 }

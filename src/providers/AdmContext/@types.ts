@@ -19,6 +19,12 @@ export interface IJobApplications {
     linkedin: string
 }
 
+export interface IJobCreate {
+    position: string;
+    sallary?: string;
+    description: string;
+}
+
 export interface IAdmContext {
     jobId: number | null;
     setJobId: React.Dispatch<React.SetStateAction<number | null>>;
@@ -28,4 +34,10 @@ export interface IAdmContext {
     deleteJob: (id: number) => Promise<void>;
     jobsApplications: IJobApplications[];
     JobsApplicationsAdm: () => void;
+    editJob: (jobId: number, position: string, salary: number, description: string) => Promise<void>;
+    registerJob: (formData: {
+        position: string;
+        description: string;
+        sallary?: string | undefined;
+    }) => Promise<void>
 }
