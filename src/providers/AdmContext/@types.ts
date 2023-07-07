@@ -34,6 +34,7 @@ export interface IAdmContext {
     deleteJob: (id: number) => Promise<void>;
     jobsApplications: IJobApplications[];
     JobsApplicationsAdm: () => void;
+    editJob: (jobId: number, position: string, salary: number, description: string) => Promise<void>;
     registerJob: (formData: {
         position: string;
         description: string;

@@ -67,7 +67,7 @@ export const AdmApplications = () => {
         ))}
         </StyledUl>
         </StyledMainDiv>
-        <Footer/>
+        <Footer position={"unset"} position2={"unset"}/>
         </>
     )
 }

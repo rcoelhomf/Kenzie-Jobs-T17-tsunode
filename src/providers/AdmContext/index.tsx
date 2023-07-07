@@ -93,9 +93,31 @@ export const AdmProvider = ({ children }: IAdmContextProps) => {
             toast.error("Erro! Tente novamente")
         } 
     }
+
+    const editJob = async (jobId: number, position: string, salary: number, description: string) => {
+        const token = localStorage.getItem("@TOKEN");
+        const config = {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        };
+        const formData = {
+          position,
+          salary,
+          description
+        };
+        try {
+          await api.put(`/jobs/${jobId}`, formData, config);
+          toast.success("Emprego atualizado com sucesso");
+          navigate("/adm");
+        } catch (error) {
+          console.error(error);
+          toast.error("Erro ao atualizar o emprego. Tente novamente.");
+        }
+      };
     
     return (
-        <AdmContext.Provider value={{ setJobId, getCompanyJobs, jobsList, deleteJob, navigate, jobId, jobsApplications, JobsApplicationsAdm, registerJob}}>
+        <AdmContext.Provider value={{ setJobId, getCompanyJobs, jobsList, deleteJob, navigate, jobId, jobsApplications, JobsApplicationsAdm, registerJob, editJob}}>
             { children }
         </AdmContext.Provider>
     )

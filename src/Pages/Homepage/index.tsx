@@ -77,7 +77,7 @@ export const HomePage = () => {
           ))}
         </JobRealList>
       </JobListDiv>
-      <Footer position={"unset"} position2="unset"/>
+      <Footer position={"unset"} position2={"unset"}/>
     </>
   )
 }
