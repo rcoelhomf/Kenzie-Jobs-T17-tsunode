@@ -80,6 +80,8 @@ export const StyleMain = styled.main`
     
                     background: var(--color-blue);
                     color: var(--color-white);
+
+                    cursor: pointer;
                 }
             }
     
