@@ -45,6 +45,7 @@ export const StyledInput = styled.input`
 `
 export const StyledButton = styled.button`
     background-color: transparent;
+    cursor: pointer;
 `
 export const StyledImgRetangle = styled.img`
     width: 66px;
@@ -77,6 +78,8 @@ export const StyledDivJobs = styled.div`
 export const StyledButtonAplly = styled.button`
     width: 197px;
     height: 58px;
+
+    cursor: pointer;
 
     background-color: transparent;
 
