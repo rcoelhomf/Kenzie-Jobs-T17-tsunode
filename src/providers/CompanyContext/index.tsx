@@ -58,10 +58,10 @@ export const CompanyProvider = ({children}: ICompanyContextProps) => {
       };
 
 
-    const registerCompany = async (formData: RegisterForm) => {
+    const registerCompany = async ({email, password, name}: RegisterForm) => {
 
         try {
-            await api.post<ICompanyRegister>("/users", formData)
+            await api.post<ICompanyRegister>("/users", {email, password, name})
             toast.success("Empresa registrada com sucesso!");
         } catch (error) {
             console.log(error)
