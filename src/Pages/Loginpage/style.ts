@@ -66,6 +66,12 @@ export const StyleMain = styled.main`
                 width: 100%;
                 
                 button {
+
+                    font-family: "Montserrat", sans-serif;
+                    font-weight: 700;
+                    font-size: 17px;
+                    line-height: 21px;
+                    color: var(--color-white);
     
                     padding: 1.2rem;
                     max-width: 97px;
@@ -87,7 +93,9 @@ export const StyleMain = styled.main`
                 }
                 
                 .link-text {
-                    text-decoration: none;
+                    text-decoration:none;
+
+                    color: var(--color-blue);
                 }
             }
     
