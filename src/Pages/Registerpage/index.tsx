@@ -29,9 +29,9 @@ export const RegisterPage = () => {
     resolver: zodResolver(registerFormSchema),
   })
 
-  const onSubmit: SubmitHandler<FormData> = async (formData) => {
+  const onSubmit: SubmitHandler<FormData> = async ({email, password, name}) => {
     try {
-      await registerCompany(formData);
+      await registerCompany({email, password, name});
       reset();
     } catch (error) {
       console.log(error)
