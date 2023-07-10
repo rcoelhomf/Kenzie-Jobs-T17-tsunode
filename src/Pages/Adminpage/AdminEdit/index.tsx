@@ -33,7 +33,7 @@ export const AdmEdit = () => {
       console.log("Dados a serem enviados para a API:", jobId, position, salary, description);
       try {
         await editJob(jobId, position, Number(salary), description);
-        setShowPosition(true); // Mostrar o valor do cargo após clicar em Editar Vaga
+        setShowPosition(true);
       } catch (error) {
         console.log("Erro ao editar a vaga:", error)
       }
