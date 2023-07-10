@@ -40,7 +40,7 @@ export const AdmJobs = () => {
                     </li>
                 )): <Title3>Nenhuma vaga criada até o momento</Title3> }
             </JobsList>
-            <Footer position="unset" />
+            {jobsList.length <= 4 ? <Footer /> : <Footer position={"unset"}/>} 
         </>
     )
 }
