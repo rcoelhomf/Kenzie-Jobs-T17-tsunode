@@ -17,7 +17,7 @@ export const EditPageContainer = styled.div`
 
 export const TitleContainer = styled.div`
   align-self: flex-start;
-  margin-top: 1.5rem
+  margin-top: 1.5rem;
 `
 
 export const EditPageInputs = styled.div`
@@ -39,7 +39,7 @@ export const StyledColumn = styled.div`
 export const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 1rem
+  margin-top: 1rem;
 `
 
 export const EditPageInput = styled.div`

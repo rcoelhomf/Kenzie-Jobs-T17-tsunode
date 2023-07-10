@@ -51,9 +51,9 @@ export const Modal = ({ name, company, jobId, companyId }: IModalProps) => {
                     <Title2 font="var(--color-blue)">Candidatar-se</Title2>
                     <img className="closeBtn" onClick={() => setIsOpen(null)} src={close} alt="imagem de um X" />
                 <Paragraph>Você está se candidatando para <span className="bold">{name}</span> em <span className="bold">{company}</span></Paragraph>
-                <form className="modalForm" onSubmit={handleSubmit(submitForm)}>
+                <form className="modalForm" onSubmit={handleSubmit(submitForm)} noValidate>
                     <Input placeholder="Nome" error={errors.name} {...register("name")} />
-                    <Input placeholder="E-mail" error={errors.email} {...register("email")} />
+                    <Input placeholder="E-mail" type="email" error={errors.email} {...register("email")} />
                     <Input placeholder="LinkedIn" error={errors.linkedin} {...register("linkedin")} />
                     <button  className="formBtn" type="submit">Candidatar-se</button>
                 </form>

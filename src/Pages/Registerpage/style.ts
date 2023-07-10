@@ -13,7 +13,7 @@ export const StyledFormSection = styled.section`
     justify-content: center;
     align-items: center;
 
-    gap: 4rem;
+    gap: 3rem;
 
     width: 100%;
     min-height: 70vh;
@@ -21,12 +21,13 @@ export const StyledFormSection = styled.section`
 
 export const StyledForm = styled.form`
     width: 518px;
+    min-height: 544px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    gap: 2.0625rem;
+    gap: 1.5rem;
 `
 
 export const StyledDiv = styled.div`

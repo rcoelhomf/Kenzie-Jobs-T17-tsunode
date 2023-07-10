@@ -74,7 +74,7 @@ export const TitleDiv = styled.div`
 
 export const JobsList = styled.ul`
     width: 100%;
-    min-height: 64.1vh;
+    min-height: 70vh;
     height: max-content;
     padding: 50px 10vw;
     gap: 20px;

@@ -6,7 +6,8 @@ export const ModalSchema = z.object({
         .nonempty("Este campo é obrigatório"),
 
     email: z.string()
-        .nonempty("Este campo é obrigatório"),
+    .nonempty("Este campo é obrigatório")
+    .email("Este campo deve conter um e-mail válido"),
 
     linkedin: z.string()
         .nonempty("Este campo é obrigatório"),
