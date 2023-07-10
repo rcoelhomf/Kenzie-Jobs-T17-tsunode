@@ -25,11 +25,7 @@ export const StyleLinksDiv = styled.div`
         color: var(--color-black);
     }
 
-    .linkEdit:hover {
-        color: var(--color-blue);
-        transition: 665ms;
-    }
-
+    
 
 `
 

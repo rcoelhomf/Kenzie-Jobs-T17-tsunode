@@ -1,14 +1,14 @@
-import { useState, ChangeEvent, FormEvent } from "react"
+import { useState, ChangeEvent, FormEvent,useContext } from "react"
 import {Title1,ParagraphMenu,Paragraph,Title2} from "../../Styles/Typography"
-import {StyledForm,StyledInput,StyledImgLupa,StyledImgRetangle,StyledButton,StyledDivJobs,StyledButtonAplly,StyledMainDiv } from"./style"
+import {StyledForm,StyledInput,StyledImgLupa,StyledImgRetangle,StyledButton,StyledDivJobs,StyledButtonAplly,StyledMainDiv,StyledResultsP,StyledUl,StyledLi } from"./style"
 import Lupa from "../../assets/LupaWhite.png"
 import Rectangle from "../../assets/Rectangle 2.png"
 import plus from "../../assets/add_FILL0_wght400_GRAD0_opsz48 1.png"
 import menus from "../../assets/remove_FILL0_wght400_GRAD0_opsz48 1.png"
 import { Footer } from "../../components/Footer"
 import { Header } from "../../components/Header"
-
-
+import { Modal } from "../../components/Modal"
+import { CompanyContext } from "../../providers/CompanyContext"
 
 interface Job {
   userId: number;
@@ -22,6 +22,7 @@ export const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState<string>("")
   const [jobs, setJobs] = useState<Job[]>([])
   const [submittedSearchTerm, setSubmittedSearchTerm] = useState<string>("")
+  const { isOpen, setIsOpen } = useContext(CompanyContext)
 
 
   const [expandedJobId, setExpandedJobId] = useState<number | null>(null)
@@ -52,10 +53,6 @@ export const SearchPage = () => {
     }
   }
 
-  const handleApplyJob = (jobId: number) => {
-    console.log(`Candidatando-se à vaga de emprego com ID ${jobId}`)
-  }
-
   return (
     <>
     <Header/>
@@ -71,15 +68,15 @@ export const SearchPage = () => {
         />
         <StyledButton type="submit"> <StyledImgRetangle src={Rectangle} alt="" />  <StyledImgLupa src={Lupa} alt=""/></StyledButton>
       </StyledForm>
+      <StyledResultsP className="Results" >Resultados de busca para: {submittedSearchTerm}</StyledResultsP>
 
       <StyledDivJobs>
       {submittedSearchTerm && (
         <>
-          <ParagraphMenu >Resultados de busca para: "{submittedSearchTerm}"</ParagraphMenu>
           {jobs.length > 0 ? (
-            <ul>
+            <StyledUl>
               {jobs.map((job) => (
-                <li key={job.id}>
+                <StyledLi key={job.id}>
                   <ParagraphMenu>{job.position}</ParagraphMenu>
                   {expandedJobId === job.id ? (
                     <>
@@ -91,10 +88,17 @@ export const SearchPage = () => {
                       <StyledButton onClick={() => handleToggleDescription(job.id)}> <img src={plus} alt=""  /></StyledButton>
                     </>
                   )}
-                  <StyledButtonAplly onClick={() => handleApplyJob(job.id)}>Candidatar-se</StyledButtonAplly>
-                </li>
+                  <StyledButtonAplly onClick={() => setIsOpen(job.id)}>Candidatar-se</StyledButtonAplly>
+                  {isOpen === job.id ? (
+                <Modal
+                  name={job.position}                  
+                  jobId={job.id}
+                  companyId={job.userId}
+                />
+              ) : null}
+                </StyledLi>
               ))}
-            </ul>
+            </StyledUl>
           ) : (
             <Title2>Desculpe :(! <Paragraph>Nenhum resultado encontrado.</Paragraph> </Title2>
           )}

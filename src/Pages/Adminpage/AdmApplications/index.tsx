@@ -24,8 +24,8 @@ export const AdmApplications = () => {
         <AdmHeader/>
         <StyledMainDiv>
         <StyleLinksDiv>
-        <ParagraphMenu>Minhas candidaturas</ParagraphMenu>
         <Link className="linkEdit" to={"/admin/jobs"}>Minhas vagas</Link>
+        <ParagraphMenu   font="var(--color-blue)">Minhas candidaturas</ParagraphMenu>
         </StyleLinksDiv>
 
         <Title1 font="var(--color-blue)" className="Title">Minhas Candidaturas</Title1>
