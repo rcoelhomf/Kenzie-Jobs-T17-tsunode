@@ -1,7 +1,7 @@
 import { styled } from "styled-components"
 
 export const StyledMainDiv = styled.div`
-     padding: 30px 10vw;
+    padding: 30px 10vw;
 
     display: flex;
     flex-direction: column;
@@ -25,11 +25,7 @@ export const StyleLinksDiv = styled.div`
         color: var(--color-black);
     }
 
-    .linkEdit:hover {
-        color: var(--color-blue);
-        transition: 665ms;
-    }
-
+    
 
 `
 
@@ -47,8 +43,6 @@ export const StyledSpan = styled.span`
 export const  StyledUl = styled.ul`
     margin-top: 50px;
     flex-wrap: wrap;
-
-
 `
 export const StyledLi = styled.li`
     width: 78vw;

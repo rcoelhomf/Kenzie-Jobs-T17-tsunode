@@ -23,6 +23,7 @@ export const StyledForm = styled.form`
 
     margin-top: 70px;
     gap:25px;
+    
 `
 
 
@@ -53,6 +54,7 @@ export const StyledImgRetangle = styled.img`
 export const StyledImgLupa = styled.img`
     width: 35px;
     height: 35px;
+    cursor: pointer;
 
 
     position: relative;
@@ -87,4 +89,30 @@ export const StyledButtonAplly = styled.button`
     line-height: 20px;
     color: var(--color-blue);
     
+`
+export const StyledResultsP = styled.p`
+    margin-top: 2rem;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    color:"var(--color-black)";
+
+`
+export const StyledUl = styled.ul`
+    width: 1105px;
+    height: 600px;
+
+    margin-top: 2rem; 
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    flex-direction: column;
+    
+
+`
+export const StyledLi = styled.li`
+
 `
