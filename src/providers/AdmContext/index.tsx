@@ -18,9 +18,17 @@ export const AdmProvider = ({ children }: IAdmContextProps) => {
 
 
     const JobsApplicationsAdm = async  () =>{
+
+        const userId = localStorage.getItem("@USERID")
+
         useEffect(() =>{
             const getApplications = async () => {
-                const response = await api.get<IJobApplications[]>("/jobs/1/applications")
+                const response = await api.get("/applications", {
+                    params: {
+                        userId: userId,
+                        _expand: "job"
+                    }
+                })
 
                 setJobsApplications(response.data)
             }
@@ -47,7 +55,7 @@ export const AdmProvider = ({ children }: IAdmContextProps) => {
                     await api.get(`/users/${companyId}/jobs`, config)
                     .then(({ data }) => setJobsList([...data]))
                 } catch (error) {
-                    
+                    toast.error("Opss! Algo deu errado")
                 }
             }
             jobsList()
@@ -69,7 +77,7 @@ export const AdmProvider = ({ children }: IAdmContextProps) => {
             .then(({ data }) => setJobsList([...data]))
             toast.success("Vaga deletada")
         } catch (error) {
-            
+            toast.error("Opss! Algo deu errado")
         }
     }
 

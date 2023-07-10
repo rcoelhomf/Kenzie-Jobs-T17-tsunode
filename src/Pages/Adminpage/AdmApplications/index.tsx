@@ -67,7 +67,7 @@ export const AdmApplications = () => {
         ))}
         </StyledUl>
         </StyledMainDiv>
-        <Footer position={"unset"} position2={"unset"}/>
+        {jobsApplications.length <= 2 ? <Footer /> : <Footer position={"unset"} position2={"unset"}/>}
         </>
     )
 }
