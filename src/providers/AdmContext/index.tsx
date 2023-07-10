@@ -31,14 +31,12 @@ export const AdmProvider = ({ children }: IAdmContextProps) => {
                 })
 
                 setJobsApplications(response.data)
+                console.log(response)
             }
 
             getApplications()
         })
     }
-
-
-
 
     const getCompanyJobs = () => {
         useEffect(() => {

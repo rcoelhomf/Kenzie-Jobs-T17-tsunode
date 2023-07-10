@@ -26,7 +26,7 @@ export const Modal = ({ name, company, jobId, companyId }: IModalProps) => {
     const submitForm: SubmitHandler<applyForm> = (formData) => {
         const applyObject: IapplySubmit = {...formData, jobId: jobId, userId: companyId}
 
-        applyJob(applyObject)
+        console.log(applyJob(applyObject))
         setIsOpen(null)
     }
 

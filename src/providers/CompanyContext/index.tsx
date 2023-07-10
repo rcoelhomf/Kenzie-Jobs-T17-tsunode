@@ -42,6 +42,7 @@ export const CompanyProvider = ({children}: ICompanyContextProps) => {
 
         try {
             await api.post<IapplySubmit>("/applications", formData)
+            console.log(formData)
             toast.success("Candidatura realizada")
         } catch (error) {
             toast.error("Ops! Algo deu errado")
@@ -52,16 +53,17 @@ export const CompanyProvider = ({children}: ICompanyContextProps) => {
         try {
           const { data } = await api.get(`/jobs?position_like=${formData}`);
           setFilteredJobs(data);
+          console.log(data)
         } catch (error) {
           toast.error("Ops! Algo deu errado");
         }
       };
 
 
-    const registerCompany = async ({email, password, name}: RegisterForm) => {
+    const registerCompany = async (formData: RegisterForm) => {
 
         try {
-            await api.post<ICompanyRegister>("/users", {email, password, name})
+            await api.post<ICompanyRegister>("/users", formData)
             toast.success("Empresa registrada com sucesso!");
         } catch (error) {
             console.log(error)

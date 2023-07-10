@@ -29,14 +29,15 @@ export const RegisterPage = () => {
     resolver: zodResolver(registerFormSchema),
   })
 
-  const onSubmit: SubmitHandler<FormData> = async ({email, password, name}) => {
+  const onSubmit: SubmitHandler<FormData> = async (formData) => {
+  
     try {
-      await registerCompany({email, password, name});
+      await registerCompany(formData);
       reset();
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   return (
     <StyledRegisterPageContainer>

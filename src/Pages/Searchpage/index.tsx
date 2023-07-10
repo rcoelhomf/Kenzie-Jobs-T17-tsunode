@@ -74,34 +74,36 @@ export const SearchPage = () => {
       {submittedSearchTerm && (
         <>
           {jobs.length > 0 ? (
-            <StyledUl>
-              {jobs.map((job) => (
-                <StyledLi key={job.id}>
-                  <ParagraphMenu>{job.position}</ParagraphMenu>
-                  {expandedJobId === job.id ? (
-                    <>
-                      <Paragraph>{job.description}</Paragraph>
-                      <StyledButton onClick={() => handleToggleDescription(job.id)}> <img src={menus} alt=""  /></StyledButton>
-                    </>
-                  ) : (
-                    <>
-                      <StyledButton onClick={() => handleToggleDescription(job.id)}> <img src={plus} alt=""  /></StyledButton>
-                    </>
-                  )}
-                  <StyledButtonAplly onClick={() => setIsOpen(job.id)}>Candidatar-se</StyledButtonAplly>
-                  {isOpen === job.id ? (
-                <Modal
-                  name={job.position}                  
-                  jobId={job.id}
-                  companyId={job.userId}
-                />
-              ) : null}
-                </StyledLi>
-              ))}
-            </StyledUl>
+  <StyledUl>
+    {jobs.map((job) => {
+      return (
+        <StyledLi key={job.id}>
+          <ParagraphMenu>{job.position}</ParagraphMenu>
+          {expandedJobId === job.id ? (
+            <>
+              <Paragraph>{job.description}</Paragraph>
+              <StyledButton onClick={() => handleToggleDescription(job.id)}> <img src={menus} alt=""  /></StyledButton>
+            </>
           ) : (
-            <Title2>Desculpe :(! <Paragraph>Nenhum resultado encontrado.</Paragraph> </Title2>
+            <>
+              <StyledButton onClick={() => handleToggleDescription(job.id)}> <img src={plus} alt=""  /></StyledButton>
+            </>
           )}
+          <StyledButtonAplly onClick={() => setIsOpen(job.id)}>Candidatar-se</StyledButtonAplly>
+          {isOpen === job.id ? (
+            <Modal
+              name={job.position}                  
+              jobId={job.id}
+              companyId={job.userId}
+            />
+          ) : null}
+        </StyledLi>
+      );
+    })}
+  </StyledUl>
+) : (
+  <Title2>Desculpe :(! <Paragraph>Nenhum resultado encontrado.</Paragraph> </Title2>
+)}
         </>
       )}
       </StyledDivJobs>
